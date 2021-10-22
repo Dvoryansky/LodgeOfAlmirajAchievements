@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/panels/styles.css"],"names":[],"mappings":"AAAA,iBACE,aAAc,CACd,SAAU,CACV,eAAgB,CAChB,gBACF","file":"main.98156a74.chunk.css","sourcesContent":[".AchievementLogo {\n  display: block;\n  width: 30%;\n  max-width: 240px;\n  margin: 20px auto;\n}\n"]}
