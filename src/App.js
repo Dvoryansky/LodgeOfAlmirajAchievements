@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import bridge from '@vkontakte/vk-bridge';
-import { useAdaptivity, View, ScreenSpinner, AdaptivityProvider, AppRoot } from '@vkontakte/vkui';
+import { useAdaptivity, View, ScreenSpinner, AdaptivityProvider, AppRoot, usePlatform, IOS, ANDROID } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 
-import Home from './panels/Home';
+import Top_First from './panels/Top_First';
 import Achievements from './panels/Achievements';
 
 const ROUTES = {
-	HOME: "home",
-	ACHIEVEMENTS: "achievements"
+	ACHIEVEMENTS: "achievements",
+	TOP_FIRST: "top_first"
 }
 
 const App = () => {
@@ -16,6 +16,11 @@ const App = () => {
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 	const { viewWidth } = useAdaptivity();
+
+	const platform = usePlatform();
+	console.log(platform);
+	const isDesktop = viewWidth >= 4;
+	console.log(isDesktop);
 
 	useEffect(() => {
 		bridge.subscribe(({ detail: { type, data }}) => {
@@ -41,8 +46,8 @@ const App = () => {
 		<AdaptivityProvider>
 			<AppRoot>
 				<View activePanel={activePanel} popout={popout}>
-					<Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go} />
-					<Achievements id={ROUTES.ACHIEVEMENTS} go={go} />
+					<Top_First id={ROUTES.TOP_FIRST} platform={platform} isDesktop={isDesktop} go={go} />
+					<Achievements id={ROUTES.ACHIEVEMENTS} go={go} viewWidth={viewWidth}/>
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>

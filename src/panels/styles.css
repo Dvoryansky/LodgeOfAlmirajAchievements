@@ -1,6 +1,41 @@
 .AchievementLogo {
+}
+
+/*.topHorizontallScroll {
   display: block;
   width: 50%;
   max-width: 240px;
   margin: 20px auto;
+  background-color: red;
+
+  display: flex;
+  width: 50%;
+  margin: auto;
+}*/
+
+.topHorizontallScroll {
+  display: flex;
+  width: 56%;
+  margin: auto;
+}
+
+progress {
+  text-align: center;
+  height: 1.5em;
+  width: 100%;
+  -webkit-appearance: none;
+  border: none;
+
+  /* Set the progressbar to relative */
+  position:relative;
+}
+progress:before {
+  content: attr(data-label);
+  font-size: 0.8em;
+  vertical-align: 0;
+
+  /*Position text over the progress bar */
+  position:absolute;
+  left:0;
+  right:0;
 }
