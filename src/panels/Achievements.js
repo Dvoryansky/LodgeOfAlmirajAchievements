@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import bridge from "@vkontakte/vk-bridge";
 
@@ -14,6 +14,7 @@ import { Avatar,
 				 HorizontalCell, HorizontalScroll,
 				 Panel, PanelHeader, PanelHeaderBack,
 				 Progress,
+				 ScreenSpinner,
 				 Text, Title,
 			 	 ViewWidth } from '@vkontakte/vkui';
 
@@ -24,6 +25,7 @@ import firstAchievement from '../img/firstAchievement.svg';
 import miniAchievement_1 from '../img/miniAchievement_1.svg';
 import bigAchievement_1 from '../img/bigAchievement_1.svg';
 import gigaAchievement_1 from '../img/gigaAchievement_1.svg';
+import noUser from '../img/noUser.png';
 
 import './styles.css';
 
@@ -47,7 +49,7 @@ let topList_Mini = {
 	"2": {},
 	"3": {},
 }
-let progress_Mini = 45;
+let progress_Mini = 0;
 
 // Средние миниатюры
 let topList_Medium = {
@@ -55,7 +57,7 @@ let topList_Medium = {
 	"2": {},
 	"3": {},
 }
-let progress_Medium = 10;
+let progress_Medium = 0;
 
 // Средние миниатюры
 let topList_Big = {
@@ -63,7 +65,7 @@ let topList_Big = {
 	"2": {},
 	"3": {},
 }
-let progress_Big = 10;
+let progress_Big = 0;
 
 // Гигантюры
 let topList_Giga = {
@@ -71,45 +73,47 @@ let topList_Giga = {
 	"2": {},
 	"3": {},
 }
-let progress_Giga = 2;
+let progress_Giga = 0;
 
 const Achievements = props => {
+	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+
   async function makeUsersTopLists() {
 		topUsers = await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "32test", "params": {"user_ids":
 
 		// Миниатюры в каждый дом!
-		"176146375, "						// Никита
-		+ "408481897, "					// Любовь
-		+ "168505910, "					// Влад
+		"1, "						//
+		+ "2, "					//
+		+ "3, "					//
 
 		// Средние миниатюры
-		+ "deniskamyzhik, "     // Денис
-		+ "diman19911, "				// Дима
-		+ "allaworld, "					// Алла
+		+ "4, "     //
+		+ "5, "				//
+		+ "6, "					//
 
 		// Большие миниатюры
-		+ "deniskamyzhik, "
-		+ "diman19911, "
-		+ "allaworld, "
+		+ "7, "
+		+ "9, "
+		+ "8, "
 
 		// Восстание ГИГАНТЮР
-		+ "40744463, "
-		+ "qqobb, "
-		+ "khitushko2013, "
+		+ "10, "
+		+ "11, "
+		+ "12, "
 
 		// Первые последователи
-		+ "414366317, "						// 1-ые 	// ???
-		+ "264984631, "											// Riley
-		+ "di.klenz, "											// Дима Кленц
-		+ "287796990, "
-		+ "diman19911, "
-		+ "allaworld, "
-		+ "40744463, "
-		+ "qqobb, "
-		+ "qqobb, "
-		+ "qqobb, "								// 10-ые
-		+ "qqobb, "
-		+ "khitushko2013",
+		+ "176146375, "						// 1-ые 	// Никита
+		+ "683862458, "											// Минчик
+		+ " "											// ???
+		+ " "
+		+ " "
+		+ " "
+		+ " "
+		+ " "
+		+ " "
+		+ " "								// 10-ые
+		+ " "
+		+ " ",
 		"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data => {
 			let i = 0;
 			data.response.forEach(element => {
@@ -134,6 +138,8 @@ const Achievements = props => {
 			topList_Giga["1"] = data.response[9];
 			topList_Giga["2"] = data.response[10];
 			topList_Giga["3"] = data.response[11];
+
+			setPopout(null);
 
 		});
 
@@ -199,8 +205,8 @@ const Achievements = props => {
 				          	<Avatar size={56} src={topList_First["2"].photo_200}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_First["3"].first_name}>
-				          	<Avatar size={56} src={topList_First["3"].photo_200}/>
+									<HorizontalCell size='s' >
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 								</div>
 							</HorizontalScroll>
@@ -210,16 +216,16 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '0 0 0 0',
 								}}>
-									<HorizontalCell size='s' header={topList_First["4"].first_name}>
-				          	<Avatar size={56} src={topList_First["4"].photo_200}/>
+									<HorizontalCell size='s' >
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_First["5"].first_name}>
-				          	<Avatar size={56} src={topList_First["5"].photo_200}/>
+									<HorizontalCell size='s' >
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_First["6"].first_name}>
-				          	<Avatar size={56} src={topList_First["6"].photo_200}/>
+									<HorizontalCell size='s' >
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 								</div>
 							</HorizontalScroll>
@@ -229,16 +235,16 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '0 0 10px 0',
 								}}>
-									<HorizontalCell size='s' header={topList_First["7"].first_name}>
-				          	<Avatar size={56} src={topList_First["7"].photo_200}/>
+									<HorizontalCell size='s' >
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_First["8"].first_name}>
-				          	<Avatar size={56} src={topList_First["8"].photo_200}/>
+									<HorizontalCell size='s' >
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_First["9"].first_name}>
-				          	<Avatar size={56} src={topList_First["9"].photo_200}/>
+									<HorizontalCell size='s' >
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 								</div>
 							</HorizontalScroll>
@@ -285,7 +291,7 @@ const Achievements = props => {
 											color: 'gray',
 											marginBottom: 16
 										}}>
-										  Закажите миниатюры <br /> с диаметром подставки 25мм
+										  Закажите миниатюры <br /> с диаметром подставки до 25мм
 							</Text>
 
 							<div class='AchievementLogo' >
@@ -297,19 +303,19 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '20px',
 								}}>
-									<HorizontalCell size='s' header={topList_Mini["1"].first_name}
-									subtitle="245">
-				          	<Avatar size={56} src={topList_Mini["1"].photo_200}/>
+									<HorizontalCell size='s' header={"<пусто>"}
+									subtitle="0">
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_Mini["2"].first_name}
-									subtitle="245">
-				          	<Avatar size={56} src={topList_Mini["2"].photo_200}/>
+									<HorizontalCell size='s' header={"<пусто>"}
+									subtitle="0">
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_Mini["3"].first_name}
-									subtitle="245">
-				          	<Avatar size={56} src={topList_Mini["3"].photo_200}/>
+									<HorizontalCell size='s' header={"<пусто>"}
+									subtitle="0">
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 								</div>
 								<Progress style={{ margin: 'auto', width: '90%' }} value={(progress_Mini/300)*100} />
@@ -355,19 +361,19 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '20px',
 								}}>
-									<HorizontalCell size='s' header={topList_Medium["1"].first_name}
+									<HorizontalCell size='s' header={"<пусто>"}
 									subtitle="245">
-										<Avatar size={56} src={topList_Medium["1"].photo_200}/>
+										<Avatar size={56} src={noUser}/>
 									</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_Medium["2"].first_name}
+									<HorizontalCell size='s' header={"<пусто>"}
 									subtitle="245">
-										<Avatar size={56} src={topList_Medium["2"].photo_200}/>
+										<Avatar size={56} src={noUser}/>
 									</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_Medium["3"].first_name}
+									<HorizontalCell size='s' header={"<пусто>"}
 									subtitle="245">
-										<Avatar size={56} src={topList_Medium["3"].photo_200}/>
+										<Avatar size={56} src={noUser}/>
 									</HorizontalCell>
 								</div>
 								<Progress style={{ margin: 'auto', width: '90%' }} value={progress_Medium} />
@@ -413,19 +419,19 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '20px',
 								}}>
-									<HorizontalCell size='s' header={topList_Giga["1"].first_name}
+									<HorizontalCell size='s' header={"<пусто>"}
 									subtitle="245">
-				          	<Avatar size={56} src={topList_Giga["1"].photo_200}/>
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_Giga["2"].first_name}
+									<HorizontalCell size='s' header={"<пусто>"}
 									subtitle="245">
-				          	<Avatar size={56} src={topList_Giga["2"].photo_200}/>
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_Giga["3"].first_name}
+									<HorizontalCell size='s' header={"<пусто>"}
 									subtitle="245">
-				          	<Avatar size={56} src={topList_Giga["3"].photo_200}/>
+				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 								</div>
 								<Progress style={{ margin: 'auto', width: '90%' }} value={progress_Giga*10} />
