@@ -30,8 +30,8 @@ import noUser from '../img/noUser.png';
 import './styles.css';
 
 // Первые последователи
-let topUsers;
-let topList_First = {
+let topRequest_FirstFollowers;
+let topList_FirstFollowers = {
 	"1": {},
 	"2": {},
 	"3": {},
@@ -44,31 +44,26 @@ let topList_First = {
 }
 
 // Миниатюры в каждый дом!
-let topList_Mini = {
+let topRequest_Medium1;
+let topList_Medium1 = {
 	"1": {},
 	"2": {},
 	"3": {},
 }
-let progress_Mini = 0;
+let progress_Medium = 7;
 
-// Средние миниатюры
-let topList_Medium = {
+// Крупная партия
+let topRequest_Big1;
+let topList_Big1 = {
 	"1": {},
 	"2": {},
 	"3": {},
 }
-let progress_Medium = 0;
+let progress_Big = 2;
 
-// Средние миниатюры
-let topList_Big = {
-	"1": {},
-	"2": {},
-	"3": {},
-}
-let progress_Big = 0;
-
-// Гигантюры
-let topList_Giga = {
+// Восстание ГИГАНТЮР
+let topRequest_Giga1;
+let topList_Giga1 = {
 	"1": {},
 	"2": {},
 	"3": {},
@@ -79,77 +74,97 @@ const Achievements = props => {
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
   async function makeUsersTopLists() {
-		topUsers = await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "32test", "params": {"user_ids":
 
-		// Миниатюры в каждый дом!
-		"1, "						//
-		+ "2, "					//
-		+ "3, "					//
+		topRequest_FirstFollowers = await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "32test", "params": {"user_ids":
 
-		// Средние миниатюры
-		+ "4, "     //
-		+ "5, "				//
-		+ "6, "					//
-
-		// Большие миниатюры
-		+ "7, "
-		+ "9, "
-		+ "8, "
-
-		// Восстание ГИГАНТЮР
-		+ "10, "
-		+ "11, "
-		+ "12, "
-
-		// Первые последователи
-		+ "176146375, "						// 1-ые 	// Никита
-		+ "683862458, "											// Минчик
-		+ " "											// ???
-		+ " "
-		+ " "
-		+ " "
-		+ " "
-		+ " "
-		+ " "
-		+ " "								// 10-ые
-		+ " "
-		+ " ",
-		"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data => {
-			let i = 0;
-			data.response.forEach(element => {
-				if (i > 11) {
-					topList_First[String(i-11)] = element;
-				};
-				i++;
-			});
-
-			topList_Mini["1"] = data.response[0];
-			topList_Mini["2"] = data.response[1];
-			topList_Mini["3"] = data.response[2];
-
-			topList_Medium["1"] = data.response[3];
-			topList_Medium["2"] = data.response[4];
-			topList_Medium["3"] = data.response[5];
-
-			topList_Big["1"] = data.response[6];
-			topList_Big["2"] = data.response[7];
-			topList_Big["3"] = data.response[8];
-
-			topList_Giga["1"] = data.response[9];
-			topList_Giga["2"] = data.response[10];
-			topList_Giga["3"] = data.response[11];
-
-			setPopout(null);
-
+			// Первые последователи
+			"176146375, "						// 1-ые 	// Никита
+			+ "683862458, "										// Минчик
+			+ "78913349, "										// Валентин Филипенко
+			+ "48864238, "										// Полина Светлова
+			+ "603535757 "										// Twi Arwe
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "								// 10-ые
+			+ " ",
+			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data2 => {
+				let i = 1;
+				data2.response.forEach(element => {
+					topList_FirstFollowers[String(i++)] = element;
+				});
 		});
 
+		topRequest_Medium1 = await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "33test", "params": {"user_ids":
 
-		console.log(topList_First);
+			// Крупная партия
+			"603535757, "											// Twi Arwe
+			+ "78913349, "										// Валентин Филипенко
+			+ "48864238, "										// Полина Светлова
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "								// 10-ые
+			+ " ",
+			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data3 => {
+				let i = 1;
 
+				data3.response.forEach(element => {
+					topList_Medium1[String(i++)] = element;
+				});
+		});
+
+		topRequest_Giga1 = await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "34test", "params": {"user_ids":
+
+			// Восстание ГИГАНТЮР
+			"603535757, "											// Twi Arwe
+			+ "48864238, "										// Полина Светлова
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "								// 10-ые
+			+ " ",
+			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data4 => {
+				let i = 1;
+
+				data4.response.forEach(element => {
+					topList_Big1[String(i++)] = element;
+				});
+		});
+
+		topRequest_Big1 = await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "34test", "params": {"user_ids":
+
+			// Миниатюры в каждый дом!
+			"603535757, "											// Twi Arwe
+			+ "48864238, "											// Полина Светлова
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "
+			+ " "								// 10-ые
+			+ " ",
+			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data4 => {
+				let i = 1;
+
+				data4.response.forEach(element => {
+					topList_Big1[String(i++)] = element;
+				});
+		});
+
+		setPopout(null);
 	};
 	makeUsersTopLists();
-
-	//console.log(props);
 
 	let sizes = ViewWidth.MOBILE;
 
@@ -197,16 +212,16 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '20px 0 0 0',
 								}}>
-									<HorizontalCell size='s' header={topList_First["1"].first_name}>
-				          	<Avatar size={56} src={topList_First["1"].photo_200}/>
+									<HorizontalCell size='s' header={topList_FirstFollowers["1"].first_name}>
+				          	<Avatar size={56} src={topList_FirstFollowers["1"].photo_200}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={topList_First["2"].first_name}>
-				          	<Avatar size={56} src={topList_First["2"].photo_200}/>
+									<HorizontalCell size='s' header={topList_FirstFollowers["2"].first_name}>
+				          	<Avatar size={56} src={topList_FirstFollowers["2"].photo_200}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' >
-				          	<Avatar size={56} src={noUser}/>
+									<HorizontalCell size='s' header={topList_FirstFollowers["3"].first_name}>
+				          	<Avatar size={56} src={topList_FirstFollowers["3"].photo_200}/>
 				        	</HorizontalCell>
 								</div>
 							</HorizontalScroll>
@@ -216,13 +231,13 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '0 0 0 0',
 								}}>
-									<HorizontalCell size='s' >
-				          	<Avatar size={56} src={noUser}/>
-				        	</HorizontalCell>
+									<HorizontalCell size='s' header={topList_FirstFollowers["4"].first_name}>
+										<Avatar size={56} src={topList_FirstFollowers["4"].photo_200}/>
+									</HorizontalCell>
 
-									<HorizontalCell size='s' >
-				          	<Avatar size={56} src={noUser}/>
-				        	</HorizontalCell>
+									<HorizontalCell size='s' header={topList_FirstFollowers["5"].first_name}>
+										<Avatar size={56} src={topList_FirstFollowers["5"].photo_200}/>
+									</HorizontalCell>
 
 									<HorizontalCell size='s' >
 				          	<Avatar size={56} src={noUser}/>
@@ -303,29 +318,29 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '20px',
 								}}>
-									<HorizontalCell size='s' header={"<пусто>"}
-									subtitle="0">
-				          	<Avatar size={56} src={noUser}/>
+									<HorizontalCell size='s' header={topList_Medium1["1"].first_name}
+									subtitle="3">
+				          	<Avatar size={56} src={topList_Medium1["1"].photo_200}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={"<пусто>"}
-									subtitle="0">
-				          	<Avatar size={56} src={noUser}/>
+									<HorizontalCell size='s' header={topList_Medium1["2"].first_name}
+									subtitle="2">
+				          	<Avatar size={56} src={topList_Medium1["2"].photo_200}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={"<пусто>"}
-									subtitle="0">
-				          	<Avatar size={56} src={noUser}/>
+									<HorizontalCell size='s' header={topList_Medium1["3"].first_name}
+									subtitle="2">
+				          	<Avatar size={56} src={topList_Medium1["3"].photo_200}/>
 				        	</HorizontalCell>
 								</div>
-								<Progress style={{ margin: 'auto', width: '90%' }} value={(progress_Mini/300)*100} />
+								<Progress style={{ margin: 'auto', width: '90%' }} value={(progress_Medium/300)*100} />
 								<Text weight="regular"
 											style={{
 												textAlign: 'center',
 												color: 'gray',
 												marginBottom: 16
 											}}>
-											  {progress_Mini}/300
+											  {progress_Medium}/300
 								</Text>
 							</HorizontalScroll>
 					</div>
@@ -361,29 +376,29 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '20px',
 								}}>
-									<HorizontalCell size='s' header={"<пусто>"}
-									subtitle="245">
-										<Avatar size={56} src={noUser}/>
+									<HorizontalCell size='s' header={topList_Big1["1"].first_name}
+									subtitle="1">
+										<Avatar size={56} src={topList_Big1["1"].photo_200}/>
 									</HorizontalCell>
 
-									<HorizontalCell size='s' header={"<пусто>"}
-									subtitle="245">
-										<Avatar size={56} src={noUser}/>
+									<HorizontalCell size='s' header={topList_Big1["2"].first_name}
+									subtitle="1">
+										<Avatar size={56} src={topList_Big1["2"].photo_200}/>
 									</HorizontalCell>
 
-									<HorizontalCell size='s' header={"<пусто>"}
-									subtitle="245">
+									<HorizontalCell size='s' header={""}
+									subtitle="">
 										<Avatar size={56} src={noUser}/>
 									</HorizontalCell>
 								</div>
-								<Progress style={{ margin: 'auto', width: '90%' }} value={progress_Medium} />
+								<Progress style={{ margin: 'auto', width: '90%' }} value={progress_Big} />
 								<Text weight="regular"
 											style={{
 												textAlign: 'center',
 												color: 'gray',
 												marginBottom: 16
 											}}>
-												{progress_Medium}/100
+												{progress_Big}/100
 								</Text>
 							</HorizontalScroll>
 					</div>
@@ -419,18 +434,18 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '20px',
 								}}>
-									<HorizontalCell size='s' header={"<пусто>"}
-									subtitle="245">
+									<HorizontalCell size='s' header={""}
+									subtitle="">
 				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={"<пусто>"}
-									subtitle="245">
+									<HorizontalCell size='s' header={""}
+									subtitle="">
 				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 
-									<HorizontalCell size='s' header={"<пусто>"}
-									subtitle="245">
+									<HorizontalCell size='s' header={""}
+									subtitle="">
 				          	<Avatar size={56} src={noUser}/>
 				        	</HorizontalCell>
 								</div>
