@@ -46,8 +46,8 @@ const App = () => {
 		<AdaptivityProvider>
 			<AppRoot>
 				<View activePanel={activePanel} popout={popout}>
-					<Top_First id={ROUTES.TOP_FIRST} platform={platform} isDesktop={isDesktop} go={go} />
 					<Achievements id={ROUTES.ACHIEVEMENTS} go={go} viewWidth={viewWidth}/>
+					<Top_First id={ROUTES.TOP_FIRST} platform={platform} isDesktop={isDesktop} go={go} />
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>
