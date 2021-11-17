@@ -23,7 +23,7 @@ import { Icon16InfoCirle } from '@vkontakte/icons';
 import { Icon12Question } from '@vkontakte/icons';
 
 import firstAchievement from '../img/firstAchievement.svg';
-import miniAchievement_1 from '../img/miniAchievement_1.svg';
+import mediumAchievement_1 from '../img/mediumAchievement_1.svg';
 import bigAchievement_1 from '../img/bigAchievement_1.svg';
 import gigaAchievement_1 from '../img/gigaAchievement_1.svg';
 import noUser from '../img/noUser.png';
@@ -50,7 +50,7 @@ let topList_Medium1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Medium = 7;
+let progress_Medium = 9;
 
 // Крупная партия
 let topRequest_Big1;
@@ -83,8 +83,8 @@ const Achievements = props => {
 			+ "78913349, "										// Валентин Филипенко
 			+ "48864238, "										// Полина Светлова
 			+ "603535757, "										// Twi Arwe (Федьвереш Артур Игоревич)
-			+ "564115201 "										// Виктория Шеина
-			+ " "
+			+ "564115201, "										// Виктория Шеина
+			+ "3871584 "										  // Андрей Алибаев
 			+ " "
 			+ " "
 			+ " "								// 10-ые
@@ -263,9 +263,11 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '0 0 10px 0',
 								}}>
-									<HorizontalCell size='s' >
-				          	<Avatar size={56} src={noUser}/>
-				        	</HorizontalCell>
+									<HorizontalCell size='s' header={topList_FirstFollowers["7"].first_name}>
+									<Link href={"https://vk.com/id" + topList_FirstFollowers["7"].id} target='_blank'>
+										<Avatar size={56} src={topList_FirstFollowers["7"].photo_200}/>
+									</Link>
+									</HorizontalCell>
 
 									<HorizontalCell size='s' >
 				          	<Avatar size={56} src={noUser}/>
@@ -295,7 +297,7 @@ const Achievements = props => {
 
 			<Group>
 				<Gallery
-		      slideWidth={document.documentElement.clientWidth > 600 ? '50%' : '70%'}
+		      slideWidth={document.documentElement.clientWidth > 600 ? '50%' : '72%'}
 		      style={{ height: '550px' }}
 					align="center"
 					showArrows
@@ -323,7 +325,7 @@ const Achievements = props => {
 							</Text>
 
 							<div class='AchievementLogo' >
-								<Avatar size={196} mode="image" src={miniAchievement_1}  />
+								<Avatar size={196} mode="image" src={mediumAchievement_1}  />
 							</div>
 
 							<HorizontalScroll>
