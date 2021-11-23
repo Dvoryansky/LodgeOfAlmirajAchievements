@@ -15,9 +15,6 @@ import { Avatar,
 
 import noUser from '../img/noUser.png';
 
-let topUsers;
-let topList_First = {	}
-
 const Top_First = ({ id, go }) => {
 
 		const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
@@ -36,17 +33,21 @@ const Top_First = ({ id, go }) => {
 				+ "48864238, "										// Полина Светлова
 				+ "603535757, "										// Twi Arwe
 				+ "564115201, "									  // Виктория Шеина
-				+ "3871584", 											// Андрей Алибаев
+				+ "3871584, " 										// Андрей Алибаев
+				+ "19881414, "										// Дмитрий Пилюгин
+				+ "156977590 ",										// Саша Брагин
 				"fields": "photo_200, city", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data => {
 
 					data.response.forEach(user => {
 						firstUsersList.push(
-						  <Link href={"https://vk.com/id" + user.id} target='_blank'><Cell
-						    before={user.photo_200 ?  <Avatar src={user.photo_200}/> : {noUser}}
-						    description={user.city && user.city.title ? "г. " + user.city.title : ''}
-						  >
-						    {`${user.first_name} ${user.last_name}`}
-						  </Cell></Link>
+						  <Link href={"https://vk.com/id" + user.id} target='_blank'>
+								<Cell
+							    before={user.photo_200 ?  <Avatar src={user.photo_200}/> : {noUser}}
+							    description={user.city && user.city.title ? "г. " + user.city.title : ''}
+							  >
+							    {`${user.first_name} ${user.last_name}`}
+							  </Cell>
+							</Link>
 						);
 					});
 

@@ -50,7 +50,7 @@ let topList_Medium1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Medium = 9;
+let progress_Medium = 19;
 
 // Крупная партия
 let topRequest_Big1;
@@ -68,7 +68,7 @@ let topList_Giga1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Giga = 0;
+let progress_Giga = 1;
 
 const Achievements = props => {
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
@@ -84,9 +84,9 @@ const Achievements = props => {
 			+ "48864238, "										// Полина Светлова
 			+ "603535757, "										// Twi Arwe (Федьвереш Артур Игоревич)
 			+ "564115201, "										// Виктория Шеина
-			+ "3871584 "										  // Андрей Алибаев
-			+ " "
-			+ " "
+			+ "3871584, "										  // Андрей Алибаев
+			+ "19881414, "										// Дмитрий Пилюгин
+			+ "156977590 "										// Саша Брагин
 			+ " "								// 10-ые
 			+ " ",
 			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data2 => {
@@ -99,12 +99,13 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "33test", "params": {"user_ids":
 
 			// Миниатюры в каждый дом!
-			"603535757, "											// Twi Arwe
-			+ "78913349, "										// Валентин Филипенко
-			+ "48864238, "										// Полина Светлова
-			+ "564115201 "										// Виктория Шеина
-			+ " "
-			+ " "
+
+			"19881414, "											// Дмитрий Пилюгин 8
+			+ "156977590, "										// Саша Брагин 4
+			+ "603535757, "										// Twi Arwe 3
+			+ "78913349, "										// Валентин Филипенко 2
+			+ "48864238, "										// Полина Светлова 1
+			+ "564115201 "										// Виктория Шеина 1
 			+ " "
 			+ " "
 			+ " "
@@ -121,8 +122,8 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "34test", "params": {"user_ids":
 
 			// Крупная партия
-			"603535757, "											// Twi Arwe
-			+ "48864238, "										// Полина Светлова
+			"603535757, "											// Twi Arwe 1
+			+ "48864238, "										// Полина Светлова 1
 			+ " "
 			+ " "
 			+ " "
@@ -143,7 +144,7 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "34test", "params": {"user_ids":
 
 			// Восстание ГИГАНТЮР!
-			"603535757, "											// ???
+			"19881414, "												// Дмитрий Пилюгин 1
 			+ "48864238, "											// ???
 			+ " "
 			+ " "
@@ -158,7 +159,7 @@ const Achievements = props => {
 				let i = 1;
 
 				data4.response.forEach(element => {
-					topList_Big1[String(i++)] = element;
+					topList_Giga1[String(i++)] = element;
 				});
 		});
 
@@ -178,7 +179,6 @@ const Achievements = props => {
 				<Gallery
     			 style={{ height: '650px' }}
 					 align='center'
-					 showArrows
 					 isDraggable = 'false'
 		    >
 					<div style={{
@@ -215,19 +215,19 @@ const Achievements = props => {
 								}}>
 									<HorizontalCell size='s' header={topList_FirstFollowers["1"].first_name}>
 				          	<Link href={"https://vk.com/id" + topList_FirstFollowers["1"].id} target='_blank'>
-											<Avatar size={56} src={topList_FirstFollowers["1"].photo_200}/>
+											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_FirstFollowers["1"].photo_200}/>
 										</Link>
 				        	</HorizontalCell>
 
 									<HorizontalCell size='s' header={topList_FirstFollowers["2"].first_name}>
 				          	<Link href={"https://vk.com/id" + topList_FirstFollowers["2"].id} target='_blank'>
-											<Avatar size={56} src={topList_FirstFollowers["2"].photo_200}/>
+											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_FirstFollowers["2"].photo_200}/>
 										</Link>
 				        	</HorizontalCell>
 
 									<HorizontalCell size='s' header={topList_FirstFollowers["3"].first_name}>
 				          	<Link href={"https://vk.com/id" + topList_FirstFollowers["3"].id} target='_blank'>
-											<Avatar size={56} src={topList_FirstFollowers["3"].photo_200}/>
+											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_FirstFollowers["3"].photo_200}/>
 										</Link>
 				        	</HorizontalCell>
 								</div>
@@ -240,19 +240,19 @@ const Achievements = props => {
 								}}>
 									<HorizontalCell size='s' header={topList_FirstFollowers["4"].first_name}>
 									<Link href={"https://vk.com/id" + topList_FirstFollowers["4"].id} target='_blank'>
-										<Avatar size={56} src={topList_FirstFollowers["4"].photo_200}/>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_FirstFollowers["4"].photo_200}/>
 									</Link>
 									</HorizontalCell>
 
 									<HorizontalCell size='s' header={topList_FirstFollowers["5"].first_name}>
 									<Link href={"https://vk.com/id" + topList_FirstFollowers["5"].id} target='_blank'>
-										<Avatar size={56} src={topList_FirstFollowers["5"].photo_200}/>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_FirstFollowers["5"].photo_200}/>
 									</Link>
 									</HorizontalCell>
 
 									<HorizontalCell size='s' header={topList_FirstFollowers["6"].first_name}>
 									<Link href={"https://vk.com/id" + topList_FirstFollowers["6"].id} target='_blank'>
-										<Avatar size={56} src={topList_FirstFollowers["6"].photo_200}/>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_FirstFollowers["6"].photo_200}/>
 									</Link>
 									</HorizontalCell>
 								</div>
@@ -265,17 +265,21 @@ const Achievements = props => {
 								}}>
 									<HorizontalCell size='s' header={topList_FirstFollowers["7"].first_name}>
 									<Link href={"https://vk.com/id" + topList_FirstFollowers["7"].id} target='_blank'>
-										<Avatar size={56} src={topList_FirstFollowers["7"].photo_200}/>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_FirstFollowers["7"].photo_200}/>
 									</Link>
 									</HorizontalCell>
 
-									<HorizontalCell size='s' >
-				          	<Avatar size={56} src={noUser}/>
-				        	</HorizontalCell>
+									<HorizontalCell size='s' header={topList_FirstFollowers["8"].first_name}>
+									<Link href={"https://vk.com/id" + topList_FirstFollowers["8"].id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_FirstFollowers["8"].photo_200}/>
+									</Link>
+									</HorizontalCell>
 
-									<HorizontalCell size='s' >
-				          	<Avatar size={56} src={noUser}/>
-				        	</HorizontalCell>
+									<HorizontalCell size='s' header={topList_FirstFollowers["9"].first_name}>
+									<Link href={"https://vk.com/id" + topList_FirstFollowers["9"].id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_FirstFollowers["9"].photo_200}/>
+									</Link>
+									</HorizontalCell>
 								</div>
 							</HorizontalScroll>
 
@@ -297,7 +301,7 @@ const Achievements = props => {
 
 			<Group>
 				<Gallery
-		      slideWidth={document.documentElement.clientWidth > 600 ? '50%' : '72%'}
+		      slideWidth={document.documentElement.clientWidth > 600 ? '50%' : '71%'}
 		      style={{ height: '550px' }}
 					align="center"
 					showArrows
@@ -328,29 +332,31 @@ const Achievements = props => {
 								<Avatar size={196} mode="image" src={mediumAchievement_1}  />
 							</div>
 
-							<HorizontalScroll>
+							<HorizontalScroll showArrows getScrollToLeft={i => i - 120} getScrollToRight={i => i + 120}>
 								<div style={{
 									display: 'flex',
+									alignItems: 'normal',
+								  justifyContent: 'start',
 									padding: '20px',
 								}}>
 									<HorizontalCell size='s' header={topList_Medium1["1"].first_name}
-									subtitle="3">
+									subtitle="8">
 										<Link href={"https://vk.com/id" + topList_Medium1["1"].id} target='_blank'>
-											<Avatar size={56} src={topList_Medium1["1"].photo_200}/>
+											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Medium1["1"].photo_200}/>
 										</Link>
 				        	</HorizontalCell>
 
 									<HorizontalCell size='s' header={topList_Medium1["2"].first_name}
-									subtitle="2">
+									subtitle="4">
 										<Link href={"https://vk.com/id" + topList_Medium1["2"].id} target='_blank'>
-											<Avatar size={56} src={topList_Medium1["2"].photo_200}/>
+											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Medium1["2"].photo_200}/>
 										</Link>
 				        	</HorizontalCell>
 
 									<HorizontalCell size='s' header={topList_Medium1["3"].first_name}
-									subtitle="2">
+									subtitle="3">
 										<Link href={"https://vk.com/id" + topList_Medium1["3"].id} target='_blank'>
-											<Avatar size={56} src={topList_Medium1["3"].photo_200}/>
+											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Medium1["3"].photo_200}/>
 										</Link>
 				        	</HorizontalCell>
 								</div>
@@ -400,20 +406,20 @@ const Achievements = props => {
 									<HorizontalCell size='s' header={topList_Big1["1"].first_name}
 									subtitle="1">
 										<Link href={"https://vk.com/id" + topList_Big1["1"].id} target='_blank'>
-											<Avatar size={56} src={topList_Big1["1"].photo_200}/>
+											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Big1["1"].photo_200}/>
 										</Link>
 									</HorizontalCell>
 
 									<HorizontalCell size='s' header={topList_Big1["2"].first_name}
 									subtitle="1">
 										<Link href={"https://vk.com/id" + topList_Big1["2"].id} target='_blank'>
-											<Avatar size={56} src={topList_Big1["2"].photo_200}/>
+											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Big1["2"].photo_200}/>
 										</Link>
 									</HorizontalCell>
 
 									<HorizontalCell size='s' header={""}
 									subtitle="">
-										<Avatar size={56} src={noUser}/>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
 									</HorizontalCell>
 								</div>
 								<Progress style={{ margin: 'auto', width: '90%' }} value={progress_Big} />
@@ -459,19 +465,21 @@ const Achievements = props => {
 									display: 'flex',
 									padding: '20px',
 								}}>
-									<HorizontalCell size='s' header={""}
-									subtitle="">
-				          	<Avatar size={56} src={noUser}/>
-				        	</HorizontalCell>
-
-									<HorizontalCell size='s' header={"Никого"}
-									subtitle="нет?..">
-				          	<Avatar size={56} src={noUser}/>
-				        	</HorizontalCell>
+								<HorizontalCell size='s' header={topList_Giga1["1"].first_name}
+								subtitle="1">
+									<Link href={"https://vk.com/id" + topList_Giga1["1"].id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Giga1["1"].photo_200}/>
+									</Link>
+								</HorizontalCell>
 
 									<HorizontalCell size='s' header={""}
 									subtitle="">
-				          	<Avatar size={56} src={noUser}/>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+									</HorizontalCell>
+
+									<HorizontalCell size='s' header={""}
+									subtitle="">
+				          	<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
 				        	</HorizontalCell>
 								</div>
 								<Progress style={{ margin: 'auto', width: '90%' }} value={progress_Giga*10} />
