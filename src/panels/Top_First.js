@@ -15,65 +15,39 @@ import { Avatar,
 
 import noUser from '../img/noUser.png';
 
-const Top_First = ({ id, go }) => {
+const Top_First = ({ id, go, topList_FirstFollowers }) => {
 
-		const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
-		const [state, setState] = useState({userItems: []});
-
-
+		//const [state, setState] = useState({userItems: []});
 
 		let firstUsersList = [];
 
-		async function makeUsersList() {
-			await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "34test", "params": {"user_ids":
-
-				"176146375, "						// 1-ые 	// Никита
-				+ "683862458, "										// Минчик
-				+ "78913349, "										// Валентин Филипенко
-				+ "48864238, "										// Полина Светлова
-				+ "603535757, "										// Twi Arwe
-				+ "564115201, "									  // Виктория Шеина
-				+ "3871584, " 										// Андрей Алибаев
-				+ "19881414, "										// Дмитрий Пилюгин
-				+ "20229474, "										// Тоша Морозов
-				+ "194138998 ",					// 10-ые	// Роман Бегемаев
-				"fields": "photo_200, city", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data => {
-
-					data.response.forEach(user => {
-						firstUsersList.push(
-						  <Link href={"https://vk.com/id" + user.id} target='_blank'>
-								<Cell
-							    before={user.photo_200 ?  <Avatar src={user.photo_200}/> : {noUser}}
-							    description={user.city && user.city.title ? "г. " + user.city.title : ''}
-							  >
-							    {`${user.first_name} ${user.last_name}`}
-							  </Cell>
-							</Link>
-						);
-					});
-
-				});
-
-				setState({userItems: firstUsersList});
-				setPopout(null);
-		}
-	makeUsersList();
+		for (let user in topList_FirstFollowers) {
+			firstUsersList.push(
+				<Link href={"https://vk.com/id" + topList_FirstFollowers[user].id} target='_blank'>
+					<Cell
+						before={topList_FirstFollowers[user].photo_200 ?  <Avatar src={topList_FirstFollowers[user].photo_200}/> : {noUser}}
+						description={topList_FirstFollowers[user].city && topList_FirstFollowers[user].city.title ? "г. " + topList_FirstFollowers[user].city.title : ''}
+					>
+						{`${topList_FirstFollowers[user].first_name} ${topList_FirstFollowers[user].last_name}`}
+					</Cell>
+				</Link>
+			);
+		};
 
 	return (
 		<Panel id={id}>
 			<PanelHeader left={<PanelHeaderBack onClick={go} data-to="achievements" />}>Список Первых</PanelHeader>
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
-					<Text weight="regular">Некоторое время с открытия Ложи Альмиража действуют скидки до 35% на все миниатюры.
+					<Text weight="regular">До 28 ноября в Ложе Альмиража действуют скидки до 35% на все миниатюры.
 																															Успей сделать заказ во время распродажи и попади в список первых последователей
 																															Ложи!</Text>
 				</Div>
 			</Group>
 
-			{state.userItems &&
 				<Group header={<Header mode="secondary">Первые последователи</Header>}>
-					{state.userItems}
-				</Group>}
+					{firstUsersList}
+				</Group>
 
 
 		</Panel>

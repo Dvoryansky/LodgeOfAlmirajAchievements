@@ -1,4 +1,8 @@
-.AchievementLogo {
+div.horizontalTopList {
+  display: flex;
+  align-items: normal;
+  justify-content: start;
+  padding: 18px;
 }
 
 /*.topHorizontallScroll {
