@@ -50,7 +50,7 @@ let topList_Medium1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Medium = 19;
+let progress_Medium = 36;
 
 // Крупная партия
 let topRequest_Big1;
@@ -75,7 +75,7 @@ const Achievements = props => {
 
   async function makeUsersTopLists() {
 
-		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "32test", "params": {"user_ids":
+		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "firstFollowersRequest", "params": {"user_ids":
 
 			// Первые последователи
 			"176146375, "						// 1-ые 	// Никита
@@ -86,8 +86,8 @@ const Achievements = props => {
 			+ "564115201, "										// Виктория Шеина
 			+ "3871584, "										  // Андрей Алибаев
 			+ "19881414, "										// Дмитрий Пилюгин
-			+ "156977590 "										// Саша Брагин
-			+ " "								// 10-ые
+			+ "20229474, "										// Тоша Морозов
+			+ "194138998 "					// 10-ые	// Роман Бегемаев
 			+ " ",
 			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data2 => {
 				let i = 1;
@@ -96,18 +96,18 @@ const Achievements = props => {
 				});
 		});
 
-		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "33test", "params": {"user_ids":
+		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "mediumMinisRequest", "params": {"user_ids":
 
 			// Миниатюры в каждый дом!
 
-			"19881414, "											// Дмитрий Пилюгин 8
-			+ "156977590, "										// Саша Брагин 4
+			"20229474, "											// Тоша Морозов 14
+			+ "19881414, "										// Дмитрий Пилюгин 8
+			+ "194138998, "										// Роман Бегемаев 5
 			+ "603535757, "										// Twi Arwe 3
 			+ "78913349, "										// Валентин Филипенко 2
-			+ "48864238, "										// Полина Светлова 1
-			+ "564115201 "										// Виктория Шеина 1
-			+ " "
-			+ " "
+			+ "48864238, "										// Полина Светлова 2
+			+ "564115201, "										// Виктория Шеина 1
+			+ "3871584 "											// Андрей Алибаев 1
 			+ " "
 			+ " "								// 10-ые
 			+ " ",
@@ -119,11 +119,11 @@ const Achievements = props => {
 				});
 		});
 
-		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "34test", "params": {"user_ids":
+		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "bigMinisRequest", "params": {"user_ids":
 
 			// Крупная партия
 			"603535757, "											// Twi Arwe 1
-			+ "48864238, "										// Полина Светлова 1
+			+ "48864238 "										// Полина Светлова 1
 			+ " "
 			+ " "
 			+ " "
@@ -141,11 +141,11 @@ const Achievements = props => {
 				});
 		});
 
-		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "34test", "params": {"user_ids":
+		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "gigaMinisRequest", "params": {"user_ids":
 
 			// Восстание ГИГАНТЮР!
 			"19881414, "												// Дмитрий Пилюгин 1
-			+ "48864238, "											// ???
+			+ "48864238 "											// ???
 			+ " "
 			+ " "
 			+ " "
@@ -155,15 +155,24 @@ const Achievements = props => {
 			+ " "
 			+ " "								// 10-ые
 			+ " ",
-			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data4 => {
+			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data5 => {
 				let i = 1;
 
-				data4.response.forEach(element => {
+				data5.response.forEach(element => {
 					topList_Giga1[String(i++)] = element;
 				});
 		});
 
 		setPopout(null);
+
+		console.log("topList_Medium1");
+		console.log(topList_Medium1);
+
+		console.log("topList_Big1");
+		console.log(topList_Big1);
+
+		console.log("topList_Giga1");
+		console.log(topList_Giga1);
 	};
 	makeUsersTopLists();
 
@@ -340,21 +349,21 @@ const Achievements = props => {
 									padding: '20px',
 								}}>
 									<HorizontalCell size='s' header={topList_Medium1["1"].first_name}
-									subtitle="8">
+									subtitle="14">
 										<Link href={"https://vk.com/id" + topList_Medium1["1"].id} target='_blank'>
 											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Medium1["1"].photo_200}/>
 										</Link>
 				        	</HorizontalCell>
 
 									<HorizontalCell size='s' header={topList_Medium1["2"].first_name}
-									subtitle="4">
+									subtitle="8">
 										<Link href={"https://vk.com/id" + topList_Medium1["2"].id} target='_blank'>
 											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Medium1["2"].photo_200}/>
 										</Link>
 				        	</HorizontalCell>
 
 									<HorizontalCell size='s' header={topList_Medium1["3"].first_name}
-									subtitle="3">
+									subtitle="5">
 										<Link href={"https://vk.com/id" + topList_Medium1["3"].id} target='_blank'>
 											<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Medium1["3"].photo_200}/>
 										</Link>
