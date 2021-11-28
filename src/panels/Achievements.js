@@ -32,7 +32,7 @@ let topList_Medium1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Medium = 36;
+let progress_Medium = 39;
 
 // Крупная партия
 let topList_Big1 = {
@@ -40,7 +40,7 @@ let topList_Big1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Big = 2;
+let progress_Big = 3;
 
 // Восстание ГИГАНТЮР
 let topList_Giga1 = {
@@ -48,7 +48,7 @@ let topList_Giga1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Giga = 2;
+let progress_Giga = 3;
 
 const Achievements = props => {
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
@@ -62,11 +62,11 @@ const Achievements = props => {
 			+ "19881414, "										// Дмитрий Пилюгин 8
 			+ "194138998, "										// Роман Бегемаев 5
 			+ "603535757, "										// Twi Arwe 3
+			+ "16405722, "										// Ал Суетнов 3
 			+ "78913349, "										// Валентин Филипенко 2
 			+ "48864238, "										// Полина Светлова 2
 			+ "564115201, "										// Виктория Шеина 1
 			+ "3871584 "											// Андрей Алибаев 1
-			+ " "
 			+ " "								// 10-ые
 			+ " ",
 			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data3 => {
@@ -80,8 +80,9 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "bigMinisRequest", "params": {"user_ids":
 
 			// Крупная партия
-			"603535757, "											// Twi Arwe 1
-			+ "48864238 "										// Полина Светлова 1
+			"603535757, "											// Twi Arwe 1 (690)
+			+ "48864238, "										// Полина Светлова 1 (390)
+			+ "16405722 "										// Ал Суетнов 1 (370)
 			+ " "
 			+ " "
 			+ " "
@@ -102,9 +103,9 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "gigaMinisRequest", "params": {"user_ids":
 
 			// Восстание ГИГАНТЮР!
-			"19881414, "												// Дмитрий Пилюгин 1
-			+ "477394855 "											// Дмитрий Токарев 1
-			+ " "
+			"19881414, "												// Дмитрий Пилюгин 1 (690)
+			+ "477394855, "											// Дмитрий Токарев 1 (690)
+			+ "16405722 "										// Ал Суетнов 1 (690)
 			+ " "
 			+ " "
 			+ " "
@@ -360,9 +361,11 @@ const Achievements = props => {
 									</Link>
 								</HorizontalCell>
 
-								<HorizontalCell size='s' header={""}
-								subtitle="">
-									<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								<HorizontalCell size='s' header={topList_Big1["3"].first_name}
+								subtitle="1">
+									<Link href={"https://vk.com/id" + topList_Big1["3"].id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Big1["3"].photo_200}/>
+									</Link>
 								</HorizontalCell>
 							</div>
 							<Progress style={{ margin: 'auto', width: '85%' }} value={progress_Big} />
@@ -420,10 +423,12 @@ const Achievements = props => {
 									</Link>
 								</HorizontalCell>
 
-								<HorizontalCell size='s' header={""}
-								subtitle="">
-			          	<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
-			        	</HorizontalCell>
+								<HorizontalCell size='s' header={topList_Giga1["3"].first_name}
+								subtitle="1">
+									<Link href={"https://vk.com/id" + topList_Giga1["3"].id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Giga1["3"].photo_200}/>
+									</Link>
+								</HorizontalCell>
 							</div>
 							<div>
 								<Progress style={{ margin: 'auto', width: '85%' }} value={progress_Giga*10} />
