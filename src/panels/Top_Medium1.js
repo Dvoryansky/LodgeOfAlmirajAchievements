@@ -15,20 +15,20 @@ import { Avatar,
 
 import noUser from '../img/noUser.png';
 
-const Top_First = ({ id, go, topList_FirstFollowers }) => {
+const Top_Medium1 = ({ id, go, topList_Medium1 }) => {
 
 		//const [state, setState] = useState({userItems: []});
 
-		let firstUsersList = [];
+		let medium1_usersList = [];
 
-		for (let user in topList_FirstFollowers) {
-			firstUsersList.push(
-				<Link href={"https://vk.com/id" + topList_FirstFollowers[user].id} target='_blank'>
+		for (let user in topList_Medium1) {
+			medium1_usersList.push(
+				<Link href={"https://vk.com/id" + topList_Medium1[user].id} target='_blank'>
 					<Cell
-						before={topList_FirstFollowers[user].photo_200 ?  <Avatar src={topList_FirstFollowers[user].photo_200}/> : {noUser}}
-						description={topList_FirstFollowers[user].city && topList_FirstFollowers[user].city.title ? "г. " + topList_FirstFollowers[user].city.title : ''}
+						before={topList_Medium1[user].photo_200 ?  <Avatar src={topList_Medium1[user].photo_200}/> : {noUser}}
+						description={topList_Medium1[user].city && topList_Medium1[user].city.title ? "г. " + topList_Medium1[user].city.title : ''}
 					>
-						{`${topList_FirstFollowers[user].first_name} ${topList_FirstFollowers[user].last_name}`}
+						{`${topList_Medium1[user].first_name} ${topList_Medium1[user].last_name}`}
 					</Cell>
 				</Link>
 			);
@@ -36,7 +36,7 @@ const Top_First = ({ id, go, topList_FirstFollowers }) => {
 
 	return (
 		<Panel id={id}>
-			<PanelHeader left={<PanelHeaderBack onClick={go} data-to="achievements" />}>Список Первых</PanelHeader>
+			<PanelHeader left={<PanelHeaderBack onClick={go} data-to="achievements" />}>Список medium</PanelHeader>
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
 					<Text weight="regular">С 1 по 28 ноября в Ложе Альмиража проходила распродажа в честь открытия.
@@ -46,7 +46,7 @@ const Top_First = ({ id, go, topList_FirstFollowers }) => {
 			</Group>
 
 				<Group header={<Header mode="secondary">Первые последователи</Header>}>
-					{firstUsersList}
+					{medium1_usersList}
 				</Group>
 
 
@@ -54,7 +54,7 @@ const Top_First = ({ id, go, topList_FirstFollowers }) => {
 	);
 };
 
-Top_First.propTypes = {
+Top_Medium1.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 	fetchedUser: PropTypes.shape({
@@ -67,4 +67,4 @@ Top_First.propTypes = {
 	}),
 };
 
-export default Top_First;
+export default Top_Medium1;

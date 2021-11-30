@@ -27,12 +27,7 @@ import noUser from '../img/noUser.png';
 import './styles.css';
 
 // Миниатюры в каждый дом!
-let topList_Medium1 = {
-	"1": {},
-	"2": {},
-	"3": {},
-}
-let progress_Medium = 39;
+let progress_Medium = 44;
 
 // Крупная партия
 let topList_Big1 = {
@@ -48,42 +43,19 @@ let topList_Giga1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Giga = 3;
+let progress_Giga = 6;
 
 const Achievements = props => {
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
   async function makeUsersTopLists() {
 
-		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "mediumMinisRequest", "params": {"user_ids":
-
-			// Миниатюры в каждый дом!
-			"20229474, "											// Тоша Морозов 14
-			+ "19881414, "										// Дмитрий Пилюгин 8
-			+ "194138998, "										// Роман Бегемаев 5
-			+ "603535757, "										// Twi Arwe 3
-			+ "16405722, "										// Ал Суетнов 3
-			+ "78913349, "										// Валентин Филипенко 2
-			+ "48864238, "										// Полина Светлова 2
-			+ "564115201, "										// Виктория Шеина 1
-			+ "3871584 "											// Андрей Алибаев 1
-			+ " "								// 10-ые
-			+ " ",
-			"fields": "photo_200", "v":"5.131", "access_token":"cd4e738acd4e738acd4e738a93cd37cec6ccd4ecd4e738aac231fbb41d26d522accbf95"}}).then(data3 => {
-				let i = 1;
-
-				data3.response.forEach(element => {
-					topList_Medium1[String(i++)] = element;
-				});
-		});
-
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "bigMinisRequest", "params": {"user_ids":
 
 			// Крупная партия
-			"603535757, "											// Twi Arwe 1 (690)
-			+ "48864238, "										// Полина Светлова 1 (390)
-			+ "16405722 "										// Ал Суетнов 1 (370)
-			+ " "
+			"48864238, "										// Полина Светлова 1 (390)
+			+ "13659175, "										// Ярослав Леухин 1 (390)
+			+ "16405722 "											// Ал Суетнов 1 (370)
 			+ " "
 			+ " "
 			+ " "
@@ -103,12 +75,13 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "gigaMinisRequest", "params": {"user_ids":
 
 			// Восстание ГИГАНТЮР!
-			"19881414, "												// Дмитрий Пилюгин 1 (690)
-			+ "477394855, "											// Дмитрий Токарев 1 (690)
-			+ "16405722 "										// Ал Суетнов 1 (690)
-			+ " "
-			+ " "
-			+ " "
+			"603535757, "											// Twi Arwe 1 (690)
+			+ "19881414, "										// Дмитрий Пилюгин 1 (690)
+			+ "477394855, "										// Дмитрий Токарев 1 (690)
+			+ "16405722, "										// Ал Суетнов 1 (690)
+			+ "13659175, "										// Ярослав Леухин 1 (690)
+			+ "188269225, "										// Оддвар Норд 1 (690)
+			+ "298211931 "										// Игорь Дубинский (690)
 			+ " "
 			+ " "
 			+ " "
@@ -156,7 +129,7 @@ const Achievements = props => {
 										color: 'gray',
 										marginBottom: 14
 									}}>
-									  Сделайте заказ во время распродажи <br /> в честь основания Ложи Альмиража
+									  Сделай заказ во время распродажи <br /> в честь основания Ложи Альмиража
 						</Text>
 
 						<div class='AchievementLogo' >
@@ -252,7 +225,7 @@ const Achievements = props => {
 			<Group>
 				<Gallery
 		      slideWidth={document.documentElement.clientWidth > 600 ? '50%' : '70%'}
-		      style={{ height: '550px' }}
+		      style={{ height: '580px' }}
 					align="center"
 					showArrows
 		    >
@@ -276,33 +249,32 @@ const Achievements = props => {
 										color: 'gray',
 										marginBottom: 16
 									}}>
-									  Закажите миниатюры <br /> с диаметром подставки до 25мм
+									  Закажите миниатюры <br /> среднего или меньшего размера
 						</Text>
 
 						<div class='AchievementLogo' >
 							<Avatar size={196} mode="image" src={mediumAchievement_1}  />
 						</div>
-
 						<HorizontalScroll showArrows getScrollToLeft={i => i - 120} getScrollToRight={i => i + 120}>
 							<div class='horizontalTopList'>
-								<HorizontalCell size='s' header={topList_Medium1["1"].first_name}
+								<HorizontalCell size='s' header={props.topList_Medium1["1"]?.first_name}
 								subtitle="14">
-									<Link href={"https://vk.com/id" + topList_Medium1["1"].id} target='_blank'>
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Medium1["1"].photo_200}/>
+									<Link href={"https://vk.com/id" + props.topList_Medium1["1"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["1"]?.photo_200}/>
 									</Link>
 			        	</HorizontalCell>
 
-								<HorizontalCell size='s' header={topList_Medium1["2"].first_name}
+								<HorizontalCell size='s' header={props.topList_Medium1["2"]?.first_name}
 								subtitle="8">
-									<Link href={"https://vk.com/id" + topList_Medium1["2"].id} target='_blank'>
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Medium1["2"].photo_200}/>
+									<Link href={"https://vk.com/id" + props.topList_Medium1["2"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["2"]?.photo_200}/>
 									</Link>
 			        	</HorizontalCell>
 
-								<HorizontalCell size='s' header={topList_Medium1["3"].first_name}
+								<HorizontalCell size='s' header={props.topList_Medium1["3"]?.first_name}
 								subtitle="5">
-									<Link href={"https://vk.com/id" + topList_Medium1["3"].id} target='_blank'>
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Medium1["3"].photo_200}/>
+									<Link href={"https://vk.com/id" + props.topList_Medium1["3"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["3"]?.photo_200}/>
 									</Link>
 			        	</HorizontalCell>
 							</div>
@@ -338,7 +310,7 @@ const Achievements = props => {
 										color: 'gray',
 										marginBottom: 16
 									}}>
-										Закажите миниатюры <br /> с диаметром подставки 50мм
+										Закажите миниатюры <br /> крупного размера
 						</Text>
 
 						<div class='AchievementLogo' >
@@ -400,7 +372,7 @@ const Achievements = props => {
 										color: 'gray',
 										marginBottom: 16
 									}}>
-									  Закажите миниатюры <br /> с диаметром подставки 75мм
+									  Закажите миниатюры <br /> огромного размера
 						</Text>
 
 						<div class='AchievementLogo' >
@@ -431,14 +403,14 @@ const Achievements = props => {
 								</HorizontalCell>
 							</div>
 							<div>
-								<Progress style={{ margin: 'auto', width: '85%' }} value={progress_Giga*10} />
+								<Progress style={{ margin: 'auto', width: '85%' }} value={progress_Giga*10/3} />
 								<Text weight="regular"
 											style={{
 												textAlign: 'center',
 												color: 'gray',
 												marginBottom: 16
 											}}>
-											  {progress_Giga}/10
+											  {progress_Giga}/30
 								</Text>
 							</div>
 						</HorizontalScroll>
