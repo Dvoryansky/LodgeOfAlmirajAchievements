@@ -27,7 +27,7 @@ import noUser from '../img/noUser.png';
 import './styles.css';
 
 // Миниатюры в каждый дом!
-let progress_Medium = 44;
+let progress_Medium = 50;
 
 // Крупная партия
 let topList_Big1 = {
@@ -35,7 +35,7 @@ let topList_Big1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Big = 3;
+let progress_Big = 5;
 
 // Восстание ГИГАНТЮР
 let topList_Giga1 = {
@@ -43,7 +43,7 @@ let topList_Giga1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Giga = 6;
+let progress_Giga = 9;
 
 const Achievements = props => {
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
@@ -53,8 +53,10 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "bigMinisRequest", "params": {"user_ids":
 
 			// Крупная партия
-			"48864238, "										// Полина Светлова 1 (390)
+			"1846504, "										// Антон Тимошин 1 (690)
+			+ "48864238, "										// Полина Светлова 1 (390)
 			+ "13659175, "										// Ярослав Леухин 1 (390)
+			+ "194138998, "										// Роман Бегемаев 1 (390)
 			+ "16405722 "											// Ал Суетнов 1 (370)
 			+ " "
 			+ " "
@@ -75,14 +77,15 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "gigaMinisRequest", "params": {"user_ids":
 
 			// Восстание ГИГАНТЮР!
-			"603535757, "											// Twi Arwe 1 (690)
+			"551114807, "											  // Саша Шульгин 1 (890)
+			+ "7695356, "									 		// Дамир Кабиров 1 (890)
+			+ "603535757, "									 	// Twi Arwe 1 (690)
 			+ "19881414, "										// Дмитрий Пилюгин 1 (690)
 			+ "477394855, "										// Дмитрий Токарев 1 (690)
 			+ "16405722, "										// Ал Суетнов 1 (690)
 			+ "13659175, "										// Ярослав Леухин 1 (690)
 			+ "188269225, "										// Оддвар Норд 1 (690)
-			+ "298211931 "										// Игорь Дубинский (690)
-			+ " "
+			+ "298211931, "										// Игорь Дубинский 1 (690)
 			+ " "
 			+ " "
 			+ " "								// 10-ые
