@@ -27,7 +27,7 @@ import noUser from '../img/noUser.png';
 import './styles.css';
 
 // Миниатюры в каждый дом!
-let progress_Medium = 50;
+let progress_Medium = 61;
 
 // Крупная партия
 let topList_Big1 = {
@@ -35,7 +35,7 @@ let topList_Big1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Big = 5;
+let progress_Big = 10;
 
 // Восстание ГИГАНТЮР
 let topList_Giga1 = {
@@ -53,7 +53,8 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "bigMinisRequest", "params": {"user_ids":
 
 			// Крупная партия
-			"1846504, "										// Антон Тимошин 1 (690)
+			"121227306, "												// Василевс Смагин 5
+			+ "1846504, "											// Антон Тимошин 1 (690)
 			+ "48864238, "										// Полина Светлова 1 (390)
 			+ "13659175, "										// Ярослав Леухин 1 (390)
 			+ "194138998, "										// Роман Бегемаев 1 (390)
@@ -268,7 +269,7 @@ const Achievements = props => {
 			        	</HorizontalCell>
 
 								<HorizontalCell size='s' header={props.topList_Medium1["2"]?.first_name}
-								subtitle="8">
+								subtitle="11">
 									<Link href={"https://vk.com/id" + props.topList_Medium1["2"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["2"]?.photo_200}/>
 									</Link>
@@ -323,7 +324,7 @@ const Achievements = props => {
 						<HorizontalScroll>
 							<div class='horizontalTopList'>
 								<HorizontalCell size='s' header={topList_Big1["1"].first_name}
-								subtitle="1">
+								subtitle="5">
 									<Link href={"https://vk.com/id" + topList_Big1["1"].id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Big1["1"].photo_200}/>
 									</Link>
