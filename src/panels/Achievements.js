@@ -27,7 +27,7 @@ import noUser from '../img/noUser.png';
 import './styles.css';
 
 // Миниатюры в каждый дом!
-let progress_Medium = 61;
+let progress_Medium = 69;
 
 // Крупная партия
 let topList_Big1 = {
@@ -43,7 +43,7 @@ let topList_Giga1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Giga = 9;
+let progress_Giga = 15;
 
 const Achievements = props => {
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
@@ -53,11 +53,11 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "bigMinisRequest", "params": {"user_ids":
 
 			// Крупная партия
-			"121227306, "												// Василевс Смагин 5
+			"121227306, "											// Василевс Смагин 5
 			+ "1846504, "											// Антон Тимошин 1 (690)
-			+ "48864238, "										// Полина Светлова 1 (390)
 			+ "13659175, "										// Ярослав Леухин 1 (390)
 			+ "194138998, "										// Роман Бегемаев 1 (390)
+			+ "48864238, "										// Полина Светлова 1 (390)
 			+ "16405722 "											// Ал Суетнов 1 (370)
 			+ " "
 			+ " "
@@ -78,7 +78,12 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "gigaMinisRequest", "params": {"user_ids":
 
 			// Восстание ГИГАНТЮР!
-			"551114807, "											  // Саша Шульгин 1 (890)
+			"16933004, "											// Андрейка Костин 2 (890)
+			+ "318913952, "										// Ольга Нигериш 1 (890)
+			+ "12610752, "										// Данила Шуляк 1 (890)
+			+ "22932458, "										// Аня Федина 1 (890)
+			+ "413383877, "										// Something Seeker 1 (890)
+			+ "551114807, "										// Саша Шульгин 1 (890)
 			+ "7695356, "									 		// Дамир Кабиров 1 (890)
 			+ "603535757, "									 	// Twi Arwe 1 (690)
 			+ "19881414, "										// Дмитрий Пилюгин 1 (690)
@@ -386,7 +391,7 @@ const Achievements = props => {
 						<HorizontalScroll>
 							<div class='horizontalTopList'>
 								<HorizontalCell size='s' header={topList_Giga1["1"].first_name}
-								subtitle="1">
+								subtitle="2">
 									<Link href={"https://vk.com/id" + topList_Giga1["1"].id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Giga1["1"].photo_200}/>
 									</Link>
