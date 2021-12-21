@@ -27,7 +27,7 @@ import noUser from '../img/noUser.png';
 import './styles.css';
 
 // Миниатюры в каждый дом!
-let progress_Medium = 69;
+let progress_Medium = 75;
 
 // Крупная партия
 let topList_Big1 = {
@@ -35,7 +35,7 @@ let topList_Big1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Big = 10;
+let progress_Big = 12;
 
 // Восстание ГИГАНТЮР
 let topList_Giga1 = {
@@ -43,7 +43,7 @@ let topList_Giga1 = {
 	"2": {},
 	"3": {},
 }
-let progress_Giga = 15;
+let progress_Giga = 16;
 
 const Achievements = props => {
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
@@ -54,6 +54,7 @@ const Achievements = props => {
 
 			// Крупная партия
 			"121227306, "											// Василевс Смагин 5
+			+ "145607848, "										// Сёма Айзенберг 2 (930)
 			+ "1846504, "											// Антон Тимошин 1 (690)
 			+ "13659175, "										// Ярослав Леухин 1 (390)
 			+ "194138998, "										// Роман Бегемаев 1 (390)
@@ -78,7 +79,8 @@ const Achievements = props => {
 		await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "gigaMinisRequest", "params": {"user_ids":
 
 			// Восстание ГИГАНТЮР!
-			"16933004, "											// Андрейка Костин 2 (890)
+			"16933004, "											// Андрейка Костин 2 (1780)
+			+ "58325381, "										// Леонид Соломенников 1 (890)
 			+ "318913952, "										// Ольга Нигериш 1 (890)
 			+ "12610752, "										// Данила Шуляк 1 (890)
 			+ "22932458, "										// Аня Федина 1 (890)
@@ -138,7 +140,7 @@ const Achievements = props => {
 										color: 'gray',
 										marginBottom: 14
 									}}>
-									  Сделай заказ во время распродажи <br /> в честь основания Ложи Альмиража
+									  Сделайте заказ во время распродажи <br /> в честь основания Ложи Альмиража
 						</Text>
 
 						<div class='AchievementLogo' >
@@ -336,7 +338,7 @@ const Achievements = props => {
 								</HorizontalCell>
 
 								<HorizontalCell size='s' header={topList_Big1["2"].first_name}
-								subtitle="1">
+								subtitle="2">
 									<Link href={"https://vk.com/id" + topList_Big1["2"].id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={topList_Big1["2"].photo_200}/>
 									</Link>
