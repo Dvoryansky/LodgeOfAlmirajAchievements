@@ -4,34 +4,48 @@ import bridge from "@vkontakte/vk-bridge";
 
 import { Avatar,
 				 Button,
-				 Cell,
 				 Div,
 				 Group,
 				 Header,
 				 Link,
 				 Panel, PanelHeader, PanelHeaderBack,
 				 ScreenSpinner,
+				 SimpleCell,
 				 Text } from '@vkontakte/vkui';
 
+import { Icon201CircleFillGold } from '@vkontakte/icons';
+import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import noUser from '../img/noUser.png';
 
-const Top_First = ({ id, go, topList_FirstFollowers }) => {
-
-		//const [state, setState] = useState({userItems: []});
+const Top_First = ({ id, go, topList_FirstFollowers, currentUser }) => {
 
 		let firstUsersList = [];
-
 		for (let user in topList_FirstFollowers) {
-			firstUsersList.push(
-				<Link href={"https://vk.com/id" + topList_FirstFollowers[user].id} target='_blank'>
-					<Cell
-						before={topList_FirstFollowers[user].photo_200 ?  <Avatar src={topList_FirstFollowers[user].photo_200}/> : {noUser}}
-						description={topList_FirstFollowers[user].city && topList_FirstFollowers[user].city.title ? "г. " + topList_FirstFollowers[user].city.title : ''}
-					>
-						{`${topList_FirstFollowers[user].first_name} ${topList_FirstFollowers[user].last_name}`}
-					</Cell>
-				</Link>
-			);
+			if (topList_FirstFollowers[user].id == currentUser.id) {
+				firstUsersList.push(
+					<Link href={"https://vk.com/id" + topList_FirstFollowers[user].id} target='_blank'>
+						<SimpleCell
+							style={{backgroundColor: '#EDEEF0'}}
+							before={topList_FirstFollowers[user].photo_200 ?  <Avatar src={topList_FirstFollowers[user].photo_200}/> : {noUser}}
+							description={topList_FirstFollowers[user].city && topList_FirstFollowers[user].city.title ? "г. " + topList_FirstFollowers[user].city.title : ''}
+						>
+							{`${topList_FirstFollowers[user].first_name} ${topList_FirstFollowers[user].last_name}`}
+						</SimpleCell>
+					</Link>
+				);
+			}
+			else {
+				firstUsersList.push(
+					<Link href={"https://vk.com/id" + topList_FirstFollowers[user].id} target='_blank'>
+						<SimpleCell
+							before={topList_FirstFollowers[user].photo_200 ?  <Avatar src={topList_FirstFollowers[user].photo_200}/> : {noUser}}
+							description={topList_FirstFollowers[user].city && topList_FirstFollowers[user].city.title ? "г. " + topList_FirstFollowers[user].city.title : ''}
+						>
+							{`${topList_FirstFollowers[user].first_name} ${topList_FirstFollowers[user].last_name}`}
+						</SimpleCell>
+					</Link>
+				);
+			}
 		};
 
 	return (

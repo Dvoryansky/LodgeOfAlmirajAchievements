@@ -4,34 +4,50 @@ import bridge from "@vkontakte/vk-bridge";
 
 import { Avatar,
 				 Button,
-				 Cell,
 				 Div,
 				 Group,
 				 Header,
 				 Link,
 				 Panel, PanelHeader, PanelHeaderBack,
 				 ScreenSpinner,
+				 SimpleCell,
 				 Text } from '@vkontakte/vkui';
 
 import noUser from '../img/noUser.png';
 
-const Top_Medium1 = ({ id, go, topList_Medium1 }) => {
-
-		//const [state, setState] = useState({userItems: []});
+const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 
 		let medium1_usersList = [];
 
 		for (let user in topList_Medium1) {
-			medium1_usersList.push(
-				<Link href={"https://vk.com/id" + topList_Medium1[user].id} target='_blank'>
-					<Cell
-						before={topList_Medium1[user].photo_200 ?  <Avatar src={topList_Medium1[user].photo_200}/> : {noUser}}
-						description={topList_Medium1[user].city && topList_Medium1[user].city.title ? "г. " + topList_Medium1[user].city.title : ''}
-					>
-						{`${topList_Medium1[user].first_name} ${topList_Medium1[user].last_name}`}
-					</Cell>
-				</Link>
-			);
+			if (topList_Medium1[user].id == currentUser.id) {
+				medium1_usersList.push(
+					<Link href={"https://vk.com/id" + topList_Medium1[user].id} target='_blank'>
+						<SimpleCell
+							badge={<Icon201CircleFillGold width={16} height={16} />}
+							indicator="10"
+							before={topList_Medium1[user].photo_200 ?  <Avatar src={topList_Medium1[user].photo_200}/> : {noUser}}
+							description={topList_Medium1[user].city && topList_Medium1[user].city.title ? "г. " + topList_Medium1[user].city.title : ''}
+							after=""
+						>
+							{`${topList_Medium1[user].first_name} ${topList_Medium1[user].last_name}`}
+						</SimpleCell>
+					</Link>
+				);
+			}
+			else {
+				medium1_usersList.push(
+					<Link href={"https://vk.com/id" + topList_Medium1[user].id} target='_blank'>
+						<SimpleCell
+							before={topList_Medium1[user].photo_200 ?  <Avatar src={topList_Medium1[user].photo_200}/> : {noUser}}
+							description={topList_Medium1[user].city && topList_Medium1[user].city.title ? "г. " + topList_Medium1[user].city.title : ''}
+							after=""
+						>
+							{`${topList_Medium1[user].first_name} ${topList_Medium1[user].last_name}`}
+						</SimpleCell>
+					</Link>
+				);
+			}
 		};
 
 	return (
@@ -39,9 +55,7 @@ const Top_Medium1 = ({ id, go, topList_Medium1 }) => {
 			<PanelHeader left={<PanelHeaderBack onClick={go} data-to="achievements" />}>Список medium</PanelHeader>
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
-					<Text weight="regular">С 1 по 28 ноября в Ложе Альмиража проходила распродажа в честь открытия.
-																															Каждый, кто сделал заказ в этот период, отмечены здесь как первые последователи.
-																															<br /><br />Их вклад — первый вклад, и он очень значим для нас.</Text>
+					<Text weight="regular">Заказывай миниатюры среднего или меньшего размера и попадай в топ!</Text>
 				</Div>
 			</Group>
 

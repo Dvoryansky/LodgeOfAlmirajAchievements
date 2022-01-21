@@ -1,7 +1,7 @@
 div.horizontalTopList {
   display: flex;
   align-items: normal;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 18px;
 }
 
