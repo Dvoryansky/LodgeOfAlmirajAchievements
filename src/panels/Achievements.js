@@ -46,123 +46,6 @@ const Achievements = props => {
 
 			<Group>
 				<Gallery
-    			 style={{ height: '650px' }}
-					 align='center'
-					 isDraggable = 'false'
-		    >
-					<div style={{
-						display: 'flex',
-            flexDirection: 'column',
-						alignItems: 'center',
-						justifyContent: 'center',
-						textAlign: 'center',
-					}}>
-						<Title level="1"
-									 weight="semibold"
-									 style={{ marginBottom: 4 }}
-						>
-							Первые последователи
-						</Title>
-						<Text weight="regular"
-									style={{
-										color: 'gray',
-										marginBottom: 14
-									}}>
-									  Сделайте заказ во время распродажи <br /> в честь основания Ложи Альмиража
-						</Text>
-
-						<div className='AchievementLogo' >
-							<Avatar size={196} mode="image" src={firstAchievement} />
-						</div>
-
-						<HorizontalScroll>
-							<div style={{
-								display: 'flex',
-								padding: '18px 0 0 0',
-							}}>
-								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[0]]?.first_name}>
-			          	<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[0]]?.id} target='_blank'>
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[0]]?.photo_200}/>
-									</Link>
-			        	</HorizontalCell>
-
-								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[1]]?.first_name}>
-			          	<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[1]]?.id} target='_blank'>
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[1]]?.photo_200}/>
-									</Link>
-			        	</HorizontalCell>
-
-								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[2]]?.first_name}>
-			          	<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[2]]?.id} target='_blank'>
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[2]]?.photo_200}/>
-									</Link>
-			        	</HorizontalCell>
-							</div>
-						</HorizontalScroll>
-
-						<HorizontalScroll>
-							<div style={{
-								display: 'flex',
-								padding: '0 0 0 0',
-							}}>
-								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[3]]?.first_name}>
-								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[3]]?.id} target='_blank'>
-									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[3]]?.photo_200}/>
-								</Link>
-								</HorizontalCell>
-
-								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[4]]?.first_name}>
-								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[4]]?.id} target='_blank'>
-									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[4]]?.photo_200}/>
-								</Link>
-								</HorizontalCell>
-
-								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[5]]?.first_name}>
-								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[5]]?.id} target='_blank'>
-									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[5]]?.photo_200}/>
-								</Link>
-								</HorizontalCell>
-							</div>
-						</HorizontalScroll>
-
-						<HorizontalScroll>
-							<div style={{
-								display: 'flex',
-								padding: '0 0 10px 0',
-							}}>
-								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[6]]?.first_name}>
-								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[6]]?.id} target='_blank'>
-									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[6]]?.photo_200}/>
-								</Link>
-								</HorizontalCell>
-
-								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[7]]?.first_name}>
-								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[7]]?.id} target='_blank'>
-									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[7]]?.photo_200}/>
-								</Link>
-								</HorizontalCell>
-
-								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[8]]?.first_name}>
-								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[8]]?.id} target='_blank'>
-									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[8]]?.photo_200}/>
-								</Link>
-								</HorizontalCell>
-							</div>
-						</HorizontalScroll>
-
-						<div>
-							<Button stretched size="l" onClick={props.go} data-to="top_first">
-			 					Смотреть весь список
-			 				</Button>
-			     	</div>
-					</div>
-				</Gallery>
-		  </Group>
-
-
-
-			<Group>
-				<Gallery
 		      slideWidth={document.documentElement.clientWidth > 600 ? '50%' : '70%'}
 		      style={{ height: '580px' }}
 					align="center"
@@ -374,6 +257,122 @@ const Achievements = props => {
 					</div>
 				</Gallery>
 		  </Group>
+
+			<Group>
+				<Gallery
+					 style={{ height: '650px' }}
+					 align='center'
+					 isDraggable = 'false'
+				>
+					<div style={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						justifyContent: 'center',
+						textAlign: 'center',
+					}}>
+						<Title level="1"
+									 weight="semibold"
+									 style={{ marginBottom: 4 }}
+						>
+							Первые последователи
+						</Title>
+						<Text weight="regular"
+									style={{
+										color: 'gray',
+										marginBottom: 14
+									}}>
+										Сделайте заказ во время распродажи <br /> в честь основания Ложи Альмиража
+						</Text>
+
+						<div className='AchievementLogo' >
+							<Avatar size={196} mode="image" src={firstAchievement} />
+						</div>
+
+						<HorizontalScroll>
+							<div style={{
+								display: 'flex',
+								padding: '18px 0 0 0',
+							}}>
+								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[0]]?.first_name}>
+									<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[0]]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[0]]?.photo_200}/>
+									</Link>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[1]]?.first_name}>
+									<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[1]]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[1]]?.photo_200}/>
+									</Link>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[2]]?.first_name}>
+									<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[2]]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[2]]?.photo_200}/>
+									</Link>
+								</HorizontalCell>
+							</div>
+						</HorizontalScroll>
+
+						<HorizontalScroll>
+							<div style={{
+								display: 'flex',
+								padding: '0 0 0 0',
+							}}>
+								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[3]]?.first_name}>
+								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[3]]?.id} target='_blank'>
+									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[3]]?.photo_200}/>
+								</Link>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[4]]?.first_name}>
+								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[4]]?.id} target='_blank'>
+									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[4]]?.photo_200}/>
+								</Link>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[5]]?.first_name}>
+								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[5]]?.id} target='_blank'>
+									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[5]]?.photo_200}/>
+								</Link>
+								</HorizontalCell>
+							</div>
+						</HorizontalScroll>
+
+						<HorizontalScroll>
+							<div style={{
+								display: 'flex',
+								padding: '0 0 10px 0',
+							}}>
+								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[6]]?.first_name}>
+								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[6]]?.id} target='_blank'>
+									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[6]]?.photo_200}/>
+								</Link>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[7]]?.first_name}>
+								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[7]]?.id} target='_blank'>
+									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[7]]?.photo_200}/>
+								</Link>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={props.topList_FirstFollowers[keys[8]]?.first_name}>
+								<Link href={"https://vk.com/id" + props.topList_FirstFollowers[keys[8]]?.id} target='_blank'>
+									<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_FirstFollowers[keys[8]]?.photo_200}/>
+								</Link>
+								</HorizontalCell>
+							</div>
+						</HorizontalScroll>
+
+						<div>
+							<Button stretched size="l" onClick={props.go} data-to="top_first">
+								Смотреть весь список
+							</Button>
+						</div>
+					</div>
+				</Gallery>
+			</Group>
+
 		</Panel>
 	);
 };
