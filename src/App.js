@@ -17,6 +17,8 @@ const App = () => {
 	const [activePanel, setActivePanel] = useState(ROUTES.ACHIEVEMENTS);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 	const { platform } = usePlatform();
+	const [history, setHistory] = useState([ROUTES.ACHIEVEMENTS]) // Заносим начальную панель в массив историй.
+
 	//const { viewWidth } = useAdaptivity();
 	//const isDesktop =  viewWidth >= 4;
 
@@ -27,6 +29,15 @@ const App = () => {
 	const [topList_Big1, setTopList_Big1] = useState( { } );
 	const [topList_Giga1, setTopList_Giga1] = useState( { } );
 
+	const goBack = () => {
+	  if( history.length === 1 ) {  // Если в массиве одно значение:
+	    bridge.send("VKWebAppClose", {"status": "success"}); // Отправляем bridge на закрытие сервиса.
+	  } else if( history.length > 1 ) { // Если в массиве больше одного значения:
+	    history.pop() // удаляем последний элемент в массиве.
+	    setActivePanel( history[history.length - 1] ) // Изменяем массив с иторией и меняем активную панель.
+	  }
+	}
+
 	useEffect(() => {
 		bridge.subscribe(({ detail: { type, data }}) => {
 			if (type === 'VKWebAppUpdateConfig') {
@@ -36,8 +47,9 @@ const App = () => {
 			}
 		});
 
-		async function fetchUser() {
+		window.addEventListener('popstate', (e) => e.preventDefault() & goBack());
 
+		async function fetchUser() {
 			const loggedUser = await bridge.send("VKWebAppGetUserInfo");
 			setCurrentUser(loggedUser);
 		}
@@ -177,13 +189,20 @@ const App = () => {
 	}, []);
 
 	const go = e => {
+		window.history.pushState( {panel: e.currentTarget.dataset.to}, `${e.currentTarget.dataset.to}` ); // Создаём новую запись в истории браузера
 		setActivePanel(e.currentTarget.dataset.to);
+  	//setActivePanel( name ); // Меняем активную панель
+  	history.push( e.currentTarget.dataset.to ); // Добавляем панель в историю
 	};
 
 	return (
 		<AdaptivityProvider>
 			<AppRoot>
-				<View activePanel={activePanel} popout={popout}>
+				<View activePanel={activePanel}
+					history={history} // Ставим историю из массива панелей.
+				  onSwipeBack={goBack} // При свайпе выполняется данная функция.
+					popout={popout}
+				>
 					<Achievements id={ROUTES.ACHIEVEMENTS} topList_FirstFollowers={topList_FirstFollowers}
 																								 topList_Medium1={topList_Medium1}
 																								 topList_Big1={topList_Big1}

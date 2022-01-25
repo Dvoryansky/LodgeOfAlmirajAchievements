@@ -50,7 +50,7 @@ const Top_First = ({ id, go, topList_FirstFollowers, currentUser }) => {
 
 	return (
 		<Panel id={id}>
-			<PanelHeader left={<PanelHeaderBack onClick={go} data-to="achievements" />}>Список Первых</PanelHeader>
+			<PanelHeader left={<PanelHeaderBack onClick={() => window.history.back()} />} >Список Первых</PanelHeader>
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
 					<Text weight="regular">С 1 по 28 ноября в Ложе Альмиража проходила распродажа в честь открытия.

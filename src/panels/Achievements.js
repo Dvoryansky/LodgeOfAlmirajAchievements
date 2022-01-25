@@ -25,13 +25,14 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 109;
+let progress_Medium = 110;
 let progress_Big = 13;
 let progress_Giga = 21;
 
 let keys = [];
 
 const Achievements = props => {
+
 	if (!keys[0]) {
 		keys = Object.keys(props.topList_FirstFollowers);
 		keys.sort(() => {return Math.random() - 0.5;});
@@ -196,7 +197,7 @@ const Achievements = props => {
 						<HorizontalScroll showArrows getScrollToLeft={i => i - 120} getScrollToRight={i => i + 120}>
 							<div className='horizontalTopList'>
 								<HorizontalCell size='s' header={props.topList_Medium1["1"]?.first_name}
-								subtitle="23">
+								subtitle="24">
 									<Link href={"https://vk.com/id" + props.topList_Medium1["1"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["1"]?.photo_200}/>
 									</Link>
