@@ -19,14 +19,14 @@ import { Icon12Question } from '@vkontakte/icons';
 
 import firstAchievement from '../img/firstAchievement.svg';
 import mediumAchievement_1 from '../img/mediumAchievement_1.svg';
-import bigAchievement_1 from '../img/bigAchievement_1.svg';
+import largeAchievement_1 from '../img/largeAchievement_1.svg';
 import gigaAchievement_1 from '../img/gigaAchievement_1.svg';
 import noUser from '../img/noUser.png';
 
 import './styles.css';
 
 let progress_Medium = 110;
-let progress_Big = 13;
+let progress_Large = 13;
 let progress_Giga = 21;
 
 let keys = [];
@@ -228,6 +228,11 @@ const Achievements = props => {
 							</Text>
 						</HorizontalScroll>
 
+						<div>
+							<Button stretched size="l" onClick={props.go} data-to="top_medium1">
+			 					Смотреть весь топ
+			 				</Button>
+			     	</div>
 					</div>
 
 					<div style={{
@@ -254,43 +259,48 @@ const Achievements = props => {
 						</Text>
 
 						<div className='AchievementLogo' >
-							<Avatar size={196} mode="image" src={bigAchievement_1} />
+							<Avatar size={196} mode="image" src={largeAchievement_1} />
 						</div>
 
 						<HorizontalScroll>
 							<div className='horizontalTopList'>
-								<HorizontalCell size='s' header={props.topList_Big1["1"]?.first_name}
+								<HorizontalCell size='s' header={props.topList_Large1["1"]?.first_name}
 								subtitle="5">
-									<Link href={"https://vk.com/id" + props.topList_Big1["1"]?.id} target='_blank'>
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Big1["1"]?.photo_200}/>
+									<Link href={"https://vk.com/id" + props.topList_Large1["1"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Large1["1"]?.photo_200}/>
 									</Link>
 								</HorizontalCell>
 
-								<HorizontalCell size='s' header={props.topList_Big1["2"]?.first_name}
+								<HorizontalCell size='s' header={props.topList_Large1["2"]?.first_name}
 								subtitle="2">
-									<Link href={"https://vk.com/id" + props.topList_Big1["2"]?.id} target='_blank'>
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Big1["2"]?.photo_200}/>
+									<Link href={"https://vk.com/id" + props.topList_Large1["2"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Large1["2"]?.photo_200}/>
 									</Link>
 								</HorizontalCell>
 
-								<HorizontalCell size='s' header={props.topList_Big1["3"]?.first_name}
+								<HorizontalCell size='s' header={props.topList_Large1["3"]?.first_name}
 								subtitle="1">
-									<Link href={"https://vk.com/id" + props.topList_Big1["3"]?.id} target='_blank'>
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Big1["3"]?.photo_200}/>
+									<Link href={"https://vk.com/id" + props.topList_Large1["3"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Large1["3"]?.photo_200}/>
 									</Link>
 								</HorizontalCell>
 							</div>
-							<Progress style={{ margin: 'auto', width: '85%' }} value={progress_Big} />
+							<Progress style={{ margin: 'auto', width: '85%' }} value={progress_Large} />
 							<Text weight="regular"
 										style={{
 											textAlign: 'center',
 											color: 'gray',
 											marginBottom: 16
 										}}>
-											{progress_Big}/100
+											{progress_Large}/100
 							</Text>
 						</HorizontalScroll>
 
+						<div>
+							<Button stretched size="l" onClick={props.go} data-to="top_large1">
+			 					Смотреть весь топ
+			 				</Button>
+			     	</div>
 					</div>
 
 					<div style={{
@@ -355,6 +365,12 @@ const Achievements = props => {
 								</Text>
 							</div>
 						</HorizontalScroll>
+
+						<div>
+							<Button stretched size="l" onClick={props.go} data-to="top_giga1">
+			 					Смотреть весь топ
+			 				</Button>
+			     	</div>
 					</div>
 				</Gallery>
 		  </Group>

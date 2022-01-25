@@ -6,11 +6,15 @@ import '@vkontakte/vkui/dist/vkui.css';
 import Achievements from './panels/Achievements';
 import Top_First from './panels/Top_First';
 import Top_Medium1 from './panels/Top_Medium1';
+import Top_Large1 from './panels/Top_Large1';
+import Top_Giga1 from './panels/Top_Giga1';
 
 const ROUTES = {
 	ACHIEVEMENTS: "achievements",
 	TOP_FIRST: "top_first",
 	TOP_MEDIUM1: "top_medium1",
+	TOP_LARGE1: "top_large1",
+	TOP_GIGA1: "top_giga1",
 }
 
 const App = () => {
@@ -26,7 +30,7 @@ const App = () => {
 
 	const [topList_FirstFollowers, setFirstFollowers] = useState( { } );
 	const [topList_Medium1, setTopList_Medium1] = useState( { } );
-	const [topList_Big1, setTopList_Big1] = useState( { } );
+	const [topList_Large1, setTopList_Large1] = useState( { } );
 	const [topList_Giga1, setTopList_Giga1] = useState( { } );
 
 	const goBack = () => {
@@ -65,7 +69,6 @@ const App = () => {
 				+ "603535757,"										// Twi Arwe (Федьвереш Артур Игоревич)
 				+ "564115201,"										// Виктория Шеина
 				+ "3871584,"										  // Андрей Алибаев
-				+ "176146375," // DELETE
 				+ "19881414,"											// Дмитрий Пилюгин
 				+ "20229474,"											// Тоша Морозов
 				+ "194138998,"										// Роман Бегемаев
@@ -109,7 +112,7 @@ const App = () => {
 				+ "3871584,"											// Андрей Алибаев 1
 				+ "669067373,"									  // Александр Ондас 1
 				+ "7695356",										  // Дамир Кабиров 1
-				"fields": "photo_200", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
+				"fields": "photo_200, city", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
 			}}).then(topList_Medium1_requestAnswer => {
 					let i = 1;
 
@@ -118,7 +121,7 @@ const App = () => {
 					});
 			});
 
-			await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "big1MinisRequest", "params": {"user_ids":
+			await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "large1MinisRequest", "params": {"user_ids":
 
 				// Крупная партия
 				"121227306,"											// Василевс Смагин 5
@@ -129,20 +132,20 @@ const App = () => {
 				+ "194138998,"										// Роман Бегемаев 1 (390)
 				+ "48864238,"										// Полина Светлова 1 (390)
 				+ "16405722"											// Ал Суетнов 1 (370)
-				+ " "
-				+ " "
-				+ " "
-				+ " "
-				+ " "
-				+ " "
-				+ " "								// 10-ые
-				+ " ",
-				"fields": "photo_200", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
-			}}).then(topList_Big1_requestAnswer => {
+				+ ""
+				+ ""
+				+ ""
+				+ ""
+				+ ""
+				+ ""
+				+ ""								// 10-ые
+				+ "",
+				"fields": "photo_200, city", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
+			}}).then(topList_Large1_requestAnswer => {
 					let n = 1;
 
-					topList_Big1_requestAnswer.response.forEach(element2 => {
-						topList_Big1[String(n++)] = element2;
+					topList_Large1_requestAnswer.response.forEach(element2 => {
+						topList_Large1[String(n++)] = element2;
 					});
 			});
 
@@ -153,7 +156,7 @@ const App = () => {
 			+ "324544054,"										// Майкл Курко 1 (890)
 			+ "123588857,"										// Игорь Ыптых 1 (890)
 			+ "84064717,"											// Никита Кривоносов 1 (890)
-			+ "25774183,"											// Святослав Дулькейт 1 (890)
+			+ "25774183,"											// Святослав Дулькейт 1 (640)
 			+ "104461,"												// Маргарита Лаврова 1 (890)
 			+ "58325381,"											// Леонид Соломенников 1 (890)
 			+ "318913952,"										// Ольга Нигериш 1 (890)
@@ -169,11 +172,11 @@ const App = () => {
 			+ "13659175,"											// Ярослав Леухин 1 (690)
 			+ "188269225,"										// Оддвар Норд 1 (690)
 			+ "298211931"											// Игорь Дубинский 1 (690)
-			+ " "
-			+ " "
-			+ " "								// 10-ые
-			+ " ",
-			"fields": "photo_200", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
+			+ ""
+			+ ""
+			+ ""								// 10-ые
+			+ "",
+			"fields": "photo_200, city", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
 		}}).then(topList_Giga1_requestAnswer => {
 				let k = 1;
 
@@ -205,11 +208,13 @@ const App = () => {
 				>
 					<Achievements id={ROUTES.ACHIEVEMENTS} topList_FirstFollowers={topList_FirstFollowers}
 																								 topList_Medium1={topList_Medium1}
-																								 topList_Big1={topList_Big1}
+																								 topList_Large1={topList_Large1}
 																								 topList_Giga1={topList_Giga1}
 																								 go={go} platform={platform}/>
 					<Top_First id={ROUTES.TOP_FIRST} topList_FirstFollowers={topList_FirstFollowers} currentUser={currentUser} go={go} />
 					<Top_Medium1 id={ROUTES.TOP_MEDIUM1} topList_Medium1={topList_Medium1} currentUser={currentUser} go={go} />
+					<Top_Large1 id={ROUTES.TOP_LARGE1} topList_Large1={topList_Large1} currentUser={currentUser} go={go} />
+					<Top_Giga1 id={ROUTES.TOP_GIGA1} topList_Giga1={topList_Giga1} currentUser={currentUser} go={go} />
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>

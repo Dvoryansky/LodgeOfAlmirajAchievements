@@ -13,19 +13,16 @@ import { Avatar,
 				 SimpleCell,
 				 Text } from '@vkontakte/vkui';
 
-import { Icon201CircleFillGold } from '@vkontakte/icons';
-import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import noUser from '../img/noUser.png';
 
 const Top_First = ({ id, go, topList_FirstFollowers, currentUser }) => {
 
 		let firstUsersList = [];
 		for (let user in topList_FirstFollowers) {
-			if (topList_FirstFollowers[user].id == currentUser.id) {
 				firstUsersList.push(
 					<Link href={"https://vk.com/id" + topList_FirstFollowers[user].id} target='_blank'>
 						<SimpleCell
-							style={{backgroundColor: '#EDEEF0'}}
+							style={topList_FirstFollowers[user].id == currentUser.id ? {backgroundColor: 'var(--button_secondary_background)'} : {}}
 							before={topList_FirstFollowers[user].photo_200 ?  <Avatar src={topList_FirstFollowers[user].photo_200}/> : {noUser}}
 							description={topList_FirstFollowers[user].city && topList_FirstFollowers[user].city.title ? "г. " + topList_FirstFollowers[user].city.title : ''}
 						>
@@ -33,19 +30,6 @@ const Top_First = ({ id, go, topList_FirstFollowers, currentUser }) => {
 						</SimpleCell>
 					</Link>
 				);
-			}
-			else {
-				firstUsersList.push(
-					<Link href={"https://vk.com/id" + topList_FirstFollowers[user].id} target='_blank'>
-						<SimpleCell
-							before={topList_FirstFollowers[user].photo_200 ?  <Avatar src={topList_FirstFollowers[user].photo_200}/> : {noUser}}
-							description={topList_FirstFollowers[user].city && topList_FirstFollowers[user].city.title ? "г. " + topList_FirstFollowers[user].city.title : ''}
-						>
-							{`${topList_FirstFollowers[user].first_name} ${topList_FirstFollowers[user].last_name}`}
-						</SimpleCell>
-					</Link>
-				);
-			}
 		};
 
 	return (

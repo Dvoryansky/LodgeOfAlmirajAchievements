@@ -18,44 +18,39 @@ import { Avatar,
 import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 
-let topNumbers = [23, 14, 11, 8, 8, 6, 6, 5, 5, 5,
-									3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1];
+let topNumbers = [2, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+									1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
 import noUser from '../img/noUser.png';
 
-const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
+const Top_Giga1 = ({ id, go, topList_Giga1, currentUser }) => {
 
-		let medium1_usersList = [];
+		let giga1_usersList = [];
 		let placeNumber = 1;
 		let isFirst = false;
 
-		for (let user in topList_Medium1) {
+		for (let user in topList_Giga1) {
 
 				switch(placeNumber) {
-					case 1:
-					case 2:
-					case 4:
-					case 5:
-					case 10:
-					case 11:
-					case 12:
 					case 14:
+					case 15:
+					case 16:
+					case 17:
+					case 18:
 					case 19:
-					case 20:
-					case 21:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
 
-				medium1_usersList.push(
-					<Link href={"https://vk.com/id" + topList_Medium1[user].id} target='_blank'>
+				giga1_usersList.push(
+					<Link href={"https://vk.com/id" + topList_Giga1[user].id} target='_blank'>
 						<SimpleCell
-								before={<div style={{width: '105px', display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', backgroundColor: ''}}><Title style={{width: '25px', textAlign: 'center', backgroundColor: ''}}>{placeNumber++}</Title><Avatar src={topList_Medium1[user].photo_200}/></div>}
-							description={topList_Medium1[user].city && topList_Medium1[user].city.title ? "г. " + topList_Medium1[user].city.title : '   '}
+								before={<div style={{width: '105px', display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', backgroundColor: ''}}><Title style={{width: '25px', textAlign: 'center', backgroundColor: ''}}>{placeNumber++}</Title><Avatar src={topList_Giga1[user].photo_200}/></div>}
+							description={topList_Giga1[user].city && topList_Giga1[user].city.title ? "г. " + topList_Giga1[user].city.title : '   '}
 							indicator={<Counter style={{width: '50px', height: '30px'}} mode="primary">{topNumbers[placeNumber-2]}</Counter>}
-							style={topList_Medium1[user].id == currentUser.id ? {backgroundColor: 'var(--button_secondary_background)'} : {}}
+							style={topList_Giga1[user].id == currentUser.id ? {backgroundColor: 'var(--button_secondary_background)'} : {}}
 						>
-							{`${topList_Medium1[user].first_name} ${topList_Medium1[user].last_name}`}
+							{`${topList_Giga1[user].first_name} ${topList_Giga1[user].last_name}`}
 							{isFirst ? <Icon201CircleFillGold width={18} height={18} style={{
 					      display: 'inline-block',
 					      verticalAlign: 'bottom',
@@ -69,22 +64,22 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 
 	return (
 		<Panel id={id}>
-			<PanelHeader left={<PanelHeaderBack onClick={() => window.history.back()} />} >Средний топ</PanelHeader>
+			<PanelHeader left={<PanelHeaderBack onClick={() => window.history.back()} />} >Крупный топ</PanelHeader>
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
-					<Text weight="regular">Заказывай миниатюры среднего или меньшего размера и попадай в топ!</Text>
+					<Text weight="regular">Заказывай миниатюры огромного размера и попадай в топ!</Text>
 				</Div>
 			</Group>
 
 			<Group header={<Header mode="secondary">Топ последователей</Header>}>
-				{medium1_usersList}
+				{giga1_usersList}
 			</Group>
 
 		</Panel>
 	);
 };
 
-Top_Medium1.propTypes = {
+Top_Giga1.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 	fetchedUser: PropTypes.shape({
@@ -97,4 +92,4 @@ Top_Medium1.propTypes = {
 	}),
 };
 
-export default Top_Medium1;
+export default Top_Giga1;
