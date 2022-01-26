@@ -36,7 +36,7 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 					case 2:
 					case 4:
 					case 5:
-					case 10:
+					case 6:
 					case 11:
 					case 12:
 					case 14:
@@ -72,7 +72,8 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 			<PanelHeader left={<PanelHeaderBack onClick={() => window.history.back()} />} >Средний топ</PanelHeader>
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
-					<Text weight="regular">Заказывай миниатюры среднего или меньшего размера и попадай в топ!</Text>
+					<Text weight="regular">Миниатюры ищут своих хозяев! Без вас им не выжить в этом жестоком мире.
+																	Заказывай миниатюры среднего или меньшего размера и стань героем для них!</Text>
 				</Div>
 			</Group>
 

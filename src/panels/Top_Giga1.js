@@ -64,7 +64,7 @@ const Top_Giga1 = ({ id, go, topList_Giga1, currentUser }) => {
 
 	return (
 		<Panel id={id}>
-			<PanelHeader left={<PanelHeaderBack onClick={() => window.history.back()} />} >Крупный топ</PanelHeader>
+			<PanelHeader left={<PanelHeaderBack onClick={() => window.history.back()} />} >ГИГАтоп</PanelHeader>
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
 					<Text weight="regular">Заказывай миниатюры огромного размера и попадай в топ!</Text>

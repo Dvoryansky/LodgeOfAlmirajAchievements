@@ -25,7 +25,7 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 110;
+let progress_Medium = 113;
 let progress_Large = 13;
 let progress_Giga = 21;
 
@@ -46,7 +46,7 @@ const Achievements = props => {
 
 			<Group>
 				<Gallery
-		      slideWidth={document.documentElement.clientWidth > 600 ? '50%' : '70%'}
+		      slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
 		      style={{ height: '580px' }}
 					align="center"
 					showArrows
