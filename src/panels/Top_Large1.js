@@ -18,7 +18,7 @@ import { Avatar,
 import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 
-let topNumbers = [5, 2, 1, 1, 1, 1, 1, 1];
+let topNumbers = [5, 3, 2, 1, 1, 1, 1, 1, 1];
 
 import noUser from '../img/noUser.png';
 
@@ -31,10 +31,10 @@ const Top_Large1 = ({ id, go, topList_Large1, currentUser }) => {
 		for (let user in topList_Large1) {
 
 				switch(placeNumber) {
-					case 5:
 					case 6:
 					case 7:
 					case 8:
+					case 9:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
