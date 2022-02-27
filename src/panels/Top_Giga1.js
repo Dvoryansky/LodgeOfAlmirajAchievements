@@ -19,7 +19,8 @@ import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 
 let topNumbers = [2, 2, 1, 1, 1, 1, 1, 1, 1, 1,
-									1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+									1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+									1, 1];
 
 import noUser from '../img/noUser.png';
 
@@ -33,11 +34,12 @@ const Top_Giga1 = ({ id, go, topList_Giga1, currentUser }) => {
 
 				switch(placeNumber) {
 					case 1:
-					case 15:
-					case 16:
+					case 4:
 					case 17:
 					case 18:
 					case 19:
+					case 20:
+					case 21:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
