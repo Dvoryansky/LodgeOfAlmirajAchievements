@@ -34,7 +34,6 @@ const Top_Giga1 = ({ id, go, topList_Giga1, currentUser }) => {
 
 				switch(placeNumber) {
 					case 1:
-					case 4:
 					case 17:
 					case 18:
 					case 19:

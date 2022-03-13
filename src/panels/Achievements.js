@@ -25,8 +25,8 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 144;
-let progress_Large = 19;
+let progress_Medium = 156;
+let progress_Large = 20;
 let progress_Giga = 24;
 
 let keys = [];
@@ -80,7 +80,7 @@ const Achievements = props => {
 						<HorizontalScroll showArrows getScrollToLeft={i => i - 120} getScrollToRight={i => i + 120}>
 							<div className='horizontalTopList'>
 								<HorizontalCell size='s' header={props.topList_Medium1["1"]?.first_name}
-								subtitle="28">
+								subtitle="30">
 									<Link href={"https://vk.com/id" + props.topList_Medium1["1"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["1"]?.photo_200}/>
 									</Link>
