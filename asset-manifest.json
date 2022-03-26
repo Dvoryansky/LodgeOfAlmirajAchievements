@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/LodgeOfAlmirajAchievements/static/css/main.fcf62f66.chunk.css",
-    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.dae0b91a.chunk.js",
-    "main.js.map": "/LodgeOfAlmirajAchievements/static/js/main.dae0b91a.chunk.js.map",
+    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.de4639ea.chunk.js",
+    "main.js.map": "/LodgeOfAlmirajAchievements/static/js/main.de4639ea.chunk.js.map",
     "runtime-main.js": "/LodgeOfAlmirajAchievements/static/js/runtime-main.3be06a48.js",
     "runtime-main.js.map": "/LodgeOfAlmirajAchievements/static/js/runtime-main.3be06a48.js.map",
     "static/css/2.1aee6b68.chunk.css": "/LodgeOfAlmirajAchievements/static/css/2.1aee6b68.chunk.css",
@@ -12,10 +12,10 @@
     "static/css/2.1aee6b68.chunk.css.map": "/LodgeOfAlmirajAchievements/static/css/2.1aee6b68.chunk.css.map",
     "static/css/main.fcf62f66.chunk.css.map": "/LodgeOfAlmirajAchievements/static/css/main.fcf62f66.chunk.css.map",
     "static/js/2.e5aa6651.chunk.js.LICENSE.txt": "/LodgeOfAlmirajAchievements/static/js/2.e5aa6651.chunk.js.LICENSE.txt",
-    "static/media/firstAchievement.59fb14da.svg": "/LodgeOfAlmirajAchievements/static/media/firstAchievement.59fb14da.svg",
-    "static/media/gigaAchievement_1.3cdc9129.svg": "/LodgeOfAlmirajAchievements/static/media/gigaAchievement_1.3cdc9129.svg",
-    "static/media/largeAchievement_1.2bf42999.svg": "/LodgeOfAlmirajAchievements/static/media/largeAchievement_1.2bf42999.svg",
-    "static/media/mediumAchievement_1.db92c801.svg": "/LodgeOfAlmirajAchievements/static/media/mediumAchievement_1.db92c801.svg",
+    "static/media/firstAchievement.fe103cd9.svg": "/LodgeOfAlmirajAchievements/static/media/firstAchievement.fe103cd9.svg",
+    "static/media/gigaAchievement_1.4a1b5318.svg": "/LodgeOfAlmirajAchievements/static/media/gigaAchievement_1.4a1b5318.svg",
+    "static/media/largeAchievement_1.fd12c6d5.svg": "/LodgeOfAlmirajAchievements/static/media/largeAchievement_1.fd12c6d5.svg",
+    "static/media/mediumAchievement_1.f77b62a6.svg": "/LodgeOfAlmirajAchievements/static/media/mediumAchievement_1.f77b62a6.svg",
     "static/media/noUser.49788283.png": "/LodgeOfAlmirajAchievements/static/media/noUser.49788283.png"
   },
   "entrypoints": [
@@ -23,6 +23,6 @@
     "static/css/2.1aee6b68.chunk.css",
     "static/js/2.e5aa6651.chunk.js",
     "static/css/main.fcf62f66.chunk.css",
-    "static/js/main.dae0b91a.chunk.js"
+    "static/js/main.de4639ea.chunk.js"
   ]
 }
