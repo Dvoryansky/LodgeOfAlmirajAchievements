@@ -19,8 +19,8 @@ import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 
 let topNumbers = [30, 14, 11, 8, 8, 8, 8, 6, 6, 6,
-									6, 5, 5, 5, 5, 5, 5, 3, 2, 2, 2,
-									2, 2, 1, 1, 1, 1, 1, 1, 1];
+									6, 5, 5, 5, 5, 5, 5, 4, 3, 2, 2,
+									2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1];
 
 import noUser from '../img/noUser.png';
 
@@ -39,11 +39,11 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 					case 7:
 					case 9:
 					case 17:
-					case 18:
-					case 22:
-					case 27:
-					case 28:
+					case 19:
+					case 24:
 					case 29:
+					case 30:
+					case 31:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
