@@ -25,7 +25,7 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 167;
+let progress_Medium = 173;
 let progress_Large = 20;
 let progress_Giga = 26;
 
