@@ -32,10 +32,10 @@ const Top_Large1 = ({ id, go, topList_Large1, currentUser }) => {
 
 				switch(placeNumber) {
 					case 3:
-					case 9:
 					case 10:
 					case 11:
 					case 12:
+					case 13:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}

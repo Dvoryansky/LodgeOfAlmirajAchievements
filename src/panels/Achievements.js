@@ -25,9 +25,9 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 173;
-let progress_Large = 20;
-let progress_Giga = 26;
+let progress_Medium = 193;
+let progress_Large = 21;
+let progress_Giga = 27;
 
 let keys = [];
 
@@ -87,14 +87,14 @@ const Achievements = props => {
 			        	</HorizontalCell>
 
 								<HorizontalCell size='s' header={props.topList_Medium1["2"]?.first_name}
-								subtitle="14">
+								subtitle="19">
 									<Link href={"https://vk.com/id" + props.topList_Medium1["2"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["2"]?.photo_200}/>
 									</Link>
 			        	</HorizontalCell>
 
 								<HorizontalCell size='s' header={props.topList_Medium1["3"]?.first_name}
-								subtitle="11">
+								subtitle="14">
 									<Link href={"https://vk.com/id" + props.topList_Medium1["3"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["3"]?.photo_200}/>
 									</Link>
@@ -230,7 +230,7 @@ const Achievements = props => {
 								</HorizontalCell>
 
 								<HorizontalCell size='s' header={props.topList_Giga1["3"]?.first_name}
-								subtitle="1">
+								subtitle="2">
 									<Link href={"https://vk.com/id" + props.topList_Giga1["3"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Giga1["3"]?.photo_200}/>
 									</Link>
