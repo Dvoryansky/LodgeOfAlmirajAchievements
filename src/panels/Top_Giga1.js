@@ -34,11 +34,12 @@ const Top_Giga1 = ({ id, go, topList_Giga1, currentUser }) => {
 
 				switch(placeNumber) {
 					case 2:
-					case 19:
+					case 4:
 					case 20:
 					case 21:
 					case 22:
 					case 23:
+					case 24:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
