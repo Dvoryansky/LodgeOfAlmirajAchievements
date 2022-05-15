@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/LodgeOfAlmirajAchievements/static/css/main.ec8e1c8f.chunk.css",
-    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.c159099f.chunk.js",
-    "main.js.map": "/LodgeOfAlmirajAchievements/static/js/main.c159099f.chunk.js.map",
+    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.eb4686c0.chunk.js",
+    "main.js.map": "/LodgeOfAlmirajAchievements/static/js/main.eb4686c0.chunk.js.map",
     "runtime-main.js": "/LodgeOfAlmirajAchievements/static/js/runtime-main.3be06a48.js",
     "runtime-main.js.map": "/LodgeOfAlmirajAchievements/static/js/runtime-main.3be06a48.js.map",
     "static/css/2.1aee6b68.chunk.css": "/LodgeOfAlmirajAchievements/static/css/2.1aee6b68.chunk.css",
@@ -27,6 +27,6 @@
     "static/css/2.1aee6b68.chunk.css",
     "static/js/2.da4af2ee.chunk.js",
     "static/css/main.ec8e1c8f.chunk.css",
-    "static/js/main.c159099f.chunk.js"
+    "static/js/main.eb4686c0.chunk.js"
   ]
 }
