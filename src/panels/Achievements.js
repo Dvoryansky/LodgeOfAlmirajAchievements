@@ -4,13 +4,12 @@ import bridge from "@vkontakte/vk-bridge";
 
 import { Avatar,
 				 Button,
-				 Div,
 				 Gallery,
 				 Group,
 				 Link,
 				 Header,
 				 HorizontalCell, HorizontalScroll,
-				 Panel, PanelHeader, PanelHeaderBack,
+				 Panel, PanelHeader, WriteBarIcon,
 				 Progress,
 				 Text, Title } from '@vkontakte/vkui';
 
@@ -21,17 +20,24 @@ import firstAchievement from '../img/firstAchievement.svg';
 import mediumAchievement_1 from '../img/mediumAchievement_1.svg';
 import largeAchievement_1 from '../img/largeAchievement_1.svg';
 import gigaAchievement_1 from '../img/gigaAchievement_1.svg';
+import gigaAchievement_2 from '../img/gigaAchievement_2.svg';
+import gargAchievement_1 from '../img/gargAchievement_1.svg';
+
+import unavailableAchievement from '../img/unavailableAchievement.svg';
 import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 226;
-let progress_Large = 25;
-let progress_Giga = 28; // Не учтены +3 от Ала
+let progress_Medium = 239;
+let progress_Large = 26;
+let progress_Giga = 31;
+let progress_Garg = 1;
 
 let keys = [];
 
 const Achievements = props => {
+
+	const [slideIndex_Giga, setSlideIndex_Giga] = useState(1);
 
 	if (!keys[0]) {
 		keys = Object.keys(props.topList_FirstFollowers);
@@ -43,6 +49,7 @@ const Achievements = props => {
 			<PanelHeader>
 				Достижения
 			</PanelHeader>
+
 
 			<Group>
 				<Gallery
@@ -87,14 +94,14 @@ const Achievements = props => {
 			        	</HorizontalCell>
 
 								<HorizontalCell size='s' header={props.topList_Medium1["2"]?.first_name}
-								subtitle="19">
+								subtitle="21">
 									<Link href={"https://vk.com/id" + props.topList_Medium1["2"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["2"]?.photo_200}/>
 									</Link>
 			        	</HorizontalCell>
 
 								<HorizontalCell size='s' header={props.topList_Medium1["3"]?.first_name}
-								subtitle="18">
+								subtitle="19">
 									<Link href={"https://vk.com/id" + props.topList_Medium1["3"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["3"]?.photo_200}/>
 									</Link>
@@ -118,6 +125,18 @@ const Achievements = props => {
 			     	</div>
 					</div>
 
+				</Gallery>
+		  </Group>
+
+
+			<Group>
+				<Gallery
+					slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
+					style={{ height: '580px' }}
+					align="center"
+					showArrows
+				>
+
 					<div style={{
 						display: 'flex',
             flexDirection: 'column',
@@ -134,7 +153,6 @@ const Achievements = props => {
 						</Title>
 						<Text weight="regular"
 									style={{
-										textAlign: 'center',
 										color: 'gray',
 										marginBottom: 16
 									}}>
@@ -168,6 +186,7 @@ const Achievements = props => {
 									</Link>
 								</HorizontalCell>
 							</div>
+
 							<Progress style={{ margin: 'auto', width: '85%' }} value={progress_Large} />
 							<Text weight="regular"
 										style={{
@@ -185,6 +204,21 @@ const Achievements = props => {
 			 				</Button>
 			     	</div>
 					</div>
+
+				</Gallery>
+		  </Group>
+
+
+			<Group>
+				<Gallery
+					slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
+					style={{ height: '600px' }}
+					align="center"
+					slideIndex={slideIndex_Giga}
+        	onChange={setSlideIndex_Giga}
+					showArrows
+					isDraggable
+				>
 
 					<div style={{
 						display: 'flex',
@@ -206,7 +240,7 @@ const Achievements = props => {
 										color: 'gray',
 										marginBottom: 16
 									}}>
-									  Закажите миниатюры <br /> огромного размера
+									  Призываю вас! <br /> Восстаньте, гигантюры!
 						</Text>
 
 						<div className='AchievementLogo' >
@@ -216,7 +250,7 @@ const Achievements = props => {
 						<HorizontalScroll>
 							<div className='horizontalTopList'>
 								<HorizontalCell size='s' header={props.topList_Giga1["1"]?.first_name}
-								subtitle="2">
+								subtitle="4">
 									<Link href={"https://vk.com/id" + props.topList_Giga1["1"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Giga1["1"]?.photo_200}/>
 									</Link>
@@ -236,18 +270,19 @@ const Achievements = props => {
 									</Link>
 								</HorizontalCell>
 							</div>
-							<div>
-								<Progress style={{ margin: 'auto', width: '85%' }} value={progress_Giga*10/3} />
-								<Text weight="regular"
-											style={{
-												textAlign: 'center',
-												color: 'gray',
-												marginBottom: 16
-											}}>
-											  {progress_Giga}/30
-								</Text>
-							</div>
 						</HorizontalScroll>
+
+						<div style={{ width: '99.5%' }}>
+
+							<Text weight="regular"
+										style={{
+											textAlign: 'center',
+											color: 'gray',
+											marginBottom: 16
+										}}>
+											Все 30 гигантюр восстали и творят хаос! <br />Кто же их остановит? И остановит ли?..
+							</Text>
+						</div>
 
 						<div>
 							<Button stretched size="l" onClick={props.go} data-to="top_giga1">
@@ -255,8 +290,91 @@ const Achievements = props => {
 			 				</Button>
 			     	</div>
 					</div>
+
+					<div style={{
+						display: 'flex',
+            flexDirection: 'column',
+						alignItems: 'center',
+						paddingTop: '20px',
+						textAlign: 'center',
+					}}>
+						<Title
+							level="1"
+							weight="semibold"
+							style={{ marginBottom: 4 }}
+						>
+							Гигантюрный<br /> ХАОС
+						</Title>
+						<Text weight="regular"
+									style={{
+										textAlign: 'center',
+										color: 'gray',
+										marginBottom: 16
+									}}>
+									  Закажите миниатюры <br /> огромного размера
+						</Text>
+
+						<div className='AchievementLogo' >
+							<Avatar size={196} mode="image" src={gigaAchievement_2} />
+						</div>
+
+						<HorizontalScroll>
+							<div className='horizontalTopList'>
+								<HorizontalCell size='s' header={props.topList_Giga2["1"]?.first_name}
+								subtitle="1">
+									<Link href={"https://vk.com/id" + props.topList_Giga2["1"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Giga2["1"]?.photo_200}/>
+									</Link>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={"Второй"}
+								subtitle="в деле">
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={"Третий"}
+								subtitle="не лишний">
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								</HorizontalCell>
+							</div>
+
+							<div style={{}}>
+								<div style={{ width: '30%', display: 'inline-block'}}>
+									<progress class="progressA" value={30/30*100} max="70"/>
+								</div>
+									<div style={{width: '60%', display: 'inline-block'}}>
+									<progress class="progressB" value={progress_Giga-30} max="70" />
+								</div>
+								<Text weight="regular"
+											style={{
+												textAlign: 'center',
+												color: 'gray',
+												marginBottom: 16,
+											}}>
+												{progress_Giga}/100
+								</Text>
+							</div>
+						</HorizontalScroll>
+
+						<div>
+							<Button stretched size="l" onClick={props.go} data-to="top_giga2">
+			 					Смотреть весь топ
+			 				</Button>
+			     	</div>
+					</div>
+
+					<div style={{
+						display: 'flex',
+            flexDirection: 'column',
+						alignItems: 'center',
+						paddingTop: '20px',
+						textAlign: 'center',
+					}}>
+					</div>
+
 				</Gallery>
 		  </Group>
+
 
 			<Group>
 				<Gallery

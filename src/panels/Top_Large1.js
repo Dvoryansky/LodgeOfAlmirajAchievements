@@ -17,8 +17,9 @@ import { Avatar,
 
 import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
+import DragonIcon from '../img/Icons/dragon-icon.svg';
 
-let topNumbers = [5, 4, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+let topNumbers = [5, 4, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
 import noUser from '../img/noUser.png';
 
@@ -27,18 +28,26 @@ const Top_Large1 = ({ id, go, topList_Large1, currentUser }) => {
 		let large1_usersList = [];
 		let placeNumber = 1;
 		let isFirst = false;
+		let isGiga = false;
 
 		for (let user in topList_Large1) {
 
 				switch(placeNumber) {
 					case 2:
 					case 4:
-					case 6:
-					case 12:
+					case 7:
 					case 13:
 					case 14:
+					case 15:
 					 	isFirst = true; break;
 					default: isFirst = false;
+				}
+
+				switch(placeNumber) {
+					case 2:
+					case 8:
+					 	isGiga = true; break;
+					default: isGiga = false;
 				}
 
 				large1_usersList.push(
@@ -56,6 +65,13 @@ const Top_Large1 = ({ id, go, topList_Large1, currentUser }) => {
 					      position: 'relative',
 					      top: -1
 					    }}/> : ""}
+							{isGiga ? <Avatar size={18} mode="image" src={DragonIcon} style={{
+					      display: 'inline-block',
+					      verticalAlign: 'bottom',
+					      position: 'relative',
+					      top: -1
+					    }}/> : ""}
+
 						</SimpleCell>
 					</Link>
 				);

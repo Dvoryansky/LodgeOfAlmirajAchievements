@@ -8,6 +8,8 @@ import Top_First from './panels/Top_First';
 import Top_Medium1 from './panels/Top_Medium1';
 import Top_Large1 from './panels/Top_Large1';
 import Top_Giga1 from './panels/Top_Giga1';
+import Top_Giga2 from './panels/Top_Giga2';
+import Top_Garg1 from './panels/Top_Garg1';
 
 const ROUTES = {
 	ACHIEVEMENTS: "achievements",
@@ -15,6 +17,8 @@ const ROUTES = {
 	TOP_MEDIUM1: "top_medium1",
 	TOP_LARGE1: "top_large1",
 	TOP_GIGA1: "top_giga1",
+	TOP_GIGA2: "top_giga2",
+	TOP_GARG1: "top_garg1",
 }
 
 const App = () => {
@@ -32,6 +36,8 @@ const App = () => {
 	const [topList_Medium1, setTopList_Medium1] = useState( { } );
 	const [topList_Large1, setTopList_Large1] = useState( { } );
 	const [topList_Giga1, setTopList_Giga1] = useState( { } );
+	const [topList_Giga2, setTopList_Giga2] = useState( { } );
+	const [topList_Garg1, setTopList_Garg1] = useState( { } );
 
 	const goBack = () => {
 	  if( history.length === 1 ) {  // Если в массиве одно значение:
@@ -99,6 +105,7 @@ const App = () => {
 
 				// Миниатюры в каждый дом!
 				"78913349,"												// Валентин Филипенко 30
+				+ "194138998,"										// Роман Бегемаев 21
 				+ "214516819,"										// Наталия Гриценко 19
 				+ "16405722,"											// Ал Суетнов 18
 				+ "20229474,"											// Тоша Морозов 14
@@ -108,7 +115,6 @@ const App = () => {
 				+ "226279714,"										// Дарья Коснырева 9
 				+ "100610386,"										// Алиса Крыжановская 8
 				+ "19881414,"											// Дмитрий Пилюгин 8
-				+ "194138998,"										// Роман Бегемаев 8
 				+ "143407618,"										// Никита Трусилин 6
 				+ "603535757,"										// Twi Arwe 6
 				+ "142204381,"										// Даниил Чепурной 6
@@ -150,6 +156,7 @@ const App = () => {
 				+ "226279714,"										// Дарья Коснырева 3
 				+ "78913349,"											// Валентин Филипенко 2
 				+ "145607848,"										// Сёма Айзенберг 2 (930)
+				+ "318913952,"										// Ольга Нигериш 1 (890)
 				+ "564115201,"										// Виктория Шеина 1
 				+ "214516819,"										// Наталия Гриценко 1
 				+ "100610386,"										// Алиса Крыжановская 1
@@ -178,12 +185,12 @@ const App = () => {
 
 			await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "giga1MinisRequest", "params": {"user_ids":
 
-			// СМОТРЕТЬ АЛА СУЕТНОВА!!!
 			// Восстание ГИГАНТЮР!
-			"214516819,"											// Наталия Гриценко 2
+			"16405722,"												// Ал Суетнов 4 (690)
+			+ "214516819,"										// Наталия Гриценко 2
 			+ "188269225,"										// Оддвар Норд 2 (1580)
 			+ "16933004,"											// Андрейка Костин 2 (1780)
-			// + "389343814,"										// Ибрахим Махотлов 1
+			// + "389343814,"									// Ибрахим Махотлов 1
 			+ "564115201,"										// Виктория Шеина 1
 			+ "145190308,"										// Андрей Морозов 1
 			+ "100610386,"										// Алиса Крыжановская 1
@@ -194,7 +201,6 @@ const App = () => {
 			+ "25774183,"											// Святослав Дулькейт 1 (640)
 			+ "104461,"												// Маргарита Лаврова 1 (890)
 			+ "58325381,"											// Леонид Соломенников 1 (890)
-			+ "318913952,"										// Ольга Нигериш 1 (890)
 			+ "12610752,"											// Данила Шуляк 1 (890)
 			+ "22932458,"											// Аня Федина 1 (890)
 			+ "413383877,"										// Something Seeker 1 (890)
@@ -203,13 +209,8 @@ const App = () => {
 			+ "603535757,"									 	// Twi Arwe 1 (690)
 			+ "19881414,"											// Дмитрий Пилюгин 1 (690)
 			+ "477394855,"										// Дмитрий Токарев 1 (690)
-			+ "16405722,"											// Ал Суетнов 1 +3 (690)
 			+ "13659175,"											// Ярослав Леухин 1 (690)
-			+ "298211931"											// Игорь Дубинский 1 (690)
-			+ ""
-			+ ""
-			+ ""								// 10-ые
-			+ "",
+			+ "298211931",										// Игорь Дубинский 1 (690)
 			"fields": "photo_200, city", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
 		}}).then(topList_Giga1_requestAnswer => {
 				let k = 1;
@@ -219,7 +220,36 @@ const App = () => {
 				});
 			});
 
-			// "626033970,"										// Анна Пентус 1 Исполинский
+			await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "giga2MinisRequest", "params": {"user_ids":
+
+			// Восстание ГИГАНТЮР! 2
+			"194138998,"											// Роман Бегемаев 1 (1800)
+			+ ""
+			+ ""
+			+ ""								// 10-ые
+			+ "",
+			"fields": "photo_200, city", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
+		}}).then(topList_Giga2_requestAnswer => {
+				let k = 1;
+
+				topList_Giga2_requestAnswer.response.forEach(element => {
+					topList_Giga2[String(k++)] = element;
+				});
+			});
+
+			await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "garg1MinisRequest", "params": {"user_ids":
+
+			// Иполинский ход
+			"626033970,"											// Анна Пентус 1
+			+ "",
+			"fields": "photo_200, city", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
+		}}).then(topList_Garg1_requestAnswer => {
+				let k = 1;
+
+				topList_Garg1_requestAnswer.response.forEach(element => {
+					topList_Garg1[String(k++)] = element;
+				});
+			});
 
 			setPopout(null);
 	}
@@ -246,11 +276,15 @@ const App = () => {
 																								 topList_Medium1={topList_Medium1}
 																								 topList_Large1={topList_Large1}
 																								 topList_Giga1={topList_Giga1}
+																								 topList_Giga2={topList_Giga2}
+																								 topList_Garg1={topList_Garg1}
 																								 go={go} platform={platform}/>
 					<Top_First id={ROUTES.TOP_FIRST} topList_FirstFollowers={topList_FirstFollowers} currentUser={currentUser} go={go} />
 					<Top_Medium1 id={ROUTES.TOP_MEDIUM1} topList_Medium1={topList_Medium1} currentUser={currentUser} go={go} />
 					<Top_Large1 id={ROUTES.TOP_LARGE1} topList_Large1={topList_Large1} currentUser={currentUser} go={go} />
 					<Top_Giga1 id={ROUTES.TOP_GIGA1} topList_Giga1={topList_Giga1} currentUser={currentUser} go={go} />
+					<Top_Giga2 id={ROUTES.TOP_GIGA2} topList_Giga2={topList_Giga2} currentUser={currentUser} go={go} />
+					<Top_Garg1 id={ROUTES.TOP_GARG1} topList_Garg1={topList_Garg1} currentUser={currentUser} go={go} />
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>

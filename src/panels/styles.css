@@ -2,7 +2,7 @@ div.horizontalTopList {
   display: flex;
   align-items: normal;
   justify-content: flex-start;
-  padding: 18px;
+  padding: 18px 0px 10px 0px;
 }
 
 /*.topHorizontallScroll {
@@ -23,12 +23,18 @@ div.horizontalTopList {
   margin: auto;
 }
 
+.progressA::-webkit-progress-value {background-color: #4CD964;}
+.progressB::-webkit-progress-value {background-color: #5181B8;}
+.progressB::-webkit-progress-bar {background-color: #D3D9DE;}
+
 progress {
+  display:block;
   text-align: center;
-  height: 1.5em;
+  height: 0.2em;
   width: 100%;
   -webkit-appearance: none;
-  border: none;
+  border-radius: 100px;
+
 
   /* Set the progressbar to relative */
   position:relative;
@@ -42,4 +48,38 @@ progress:before {
   position:absolute;
   left:0;
   right:0;
+}
+
+.progressA {
+    border: 0;
+    border-radius: 20px 0px 0px 20px;
+}
+.progressA::-webkit-progress-bar {
+    border: 0;
+    border-radius: 20px 0px 0px 20px;
+}
+.progressA::-webkit-progress-value {
+    border: 0;
+    border-radius: 20px 0px 0px 20px;
+}
+.progressA::-moz-progress-bar {
+    border: 0;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.progressB {
+    border: 0;
+    border-radius: 0px 20px 20px 0px;
+}
+.progressB::-webkit-progress-bar {
+    border: 0;
+    border-radius: 0px 20px 20px 0px;
+}
+.progressB::-webkit-progress-value {
+    border: 0;
+    border-radius: 0px 20px 20px 0px;
+}
+.progressB::-moz-progress-bar {
+    border: 0;
+    border-radius: 0px 20px 20px 0px;
 }

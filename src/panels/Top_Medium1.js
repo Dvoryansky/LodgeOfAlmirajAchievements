@@ -17,6 +17,7 @@ import { Avatar,
 
 import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
+import DragonIcon from '../img/Icons/dragon-icon.svg';
 
 let topNumbers = [30, 19, 18, 14, 11, 11, 10, 9, 8, 8,
 									8, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 4, 4,
@@ -29,15 +30,16 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 		let medium1_usersList = [];
 		let placeNumber = 1;
 		let isFirst = false;
+		let isGiga = false;
 
 		for (let user in topList_Medium1) {
 
 				switch(placeNumber) {
 					case 1:
-					case 3:
+					case 2:
 					case 4:
 					case 5:
-					case 10:
+					case 6:
 					case 11:
 					case 13:
 					case 21:
@@ -48,6 +50,13 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 					default: isFirst = false;
 				}
 
+				switch(placeNumber) {
+					case 3:
+					case 4:
+					 	isGiga = true; break;
+					default: isGiga = false;
+				}
+
 				medium1_usersList.push(
 					<Link href={"https://vk.com/id" + topList_Medium1[user].id} target='_blank'>
 						<SimpleCell
@@ -56,13 +65,20 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 							indicator={<Counter style={{width: '50px', height: '30px'}} mode="primary">{topNumbers[placeNumber-2]}</Counter>}
 							style={topList_Medium1[user].id == currentUser.id ? {backgroundColor: 'var(--button_secondary_background)'} : {}}
 						>
-							{`${topList_Medium1[user].first_name} ${topList_Medium1[user].last_name}`}
+							{`${topList_Medium1[user].first_name}  ${topList_Medium1[user].last_name}`}
 							{isFirst ? <Icon201CircleFillGold width={18} height={18} style={{
 					      display: 'inline-block',
 					      verticalAlign: 'bottom',
 					      position: 'relative',
 					      top: -1
 					    }}/> : ""}
+							 {isGiga ? <Avatar size={18} mode="image" src={DragonIcon} style={{
+					      display: 'inline-block',
+					      verticalAlign: 'bottom',
+					      position: 'relative',
+					      top: -1
+					    }}/> : ""}
+
 						</SimpleCell>
 					</Link>
 				);
@@ -74,7 +90,7 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
 					<Text weight="regular">Миниатюры ищут своих хозяев! Без вас им не выжить в этом жестоком мире.
-																	Заказывай миниатюры среднего или меньшего размера и стань героем для них!</Text>
+																	Заказывайте миниатюры среднего или меньшего размера и станьте героями для них! А они станут героями для вас.</Text>
 				</Div>
 			</Group>
 
