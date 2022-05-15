@@ -212,7 +212,7 @@ const Achievements = props => {
 			<Group>
 				<Gallery
 					slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
-					style={{ height: '600px' }}
+					style={{ height: '610px' }}
 					align="center"
 					slideIndex={slideIndex_Giga}
         	onChange={setSlideIndex_Giga}
