@@ -28,7 +28,7 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 239;
+let progress_Medium = 262;
 let progress_Large = 26;
 let progress_Giga = 31;
 let progress_Garg = 1;
@@ -50,6 +50,74 @@ const Achievements = props => {
 				Достижения
 			</PanelHeader>
 
+			<Group>
+				<Gallery
+					slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
+					style={{ height: '510px' }}
+					align="center"
+					showArrows
+				>
+
+					<div style={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+						paddingTop: '20px',
+						textAlign: 'center',
+					}}>
+						<Title
+							level="1"
+							weight="semibold"
+							style={{ marginBottom: 4 }}
+						>
+							Тайное <br /> достижение
+						</Title>
+						<Text weight="regular"
+									style={{
+										textAlign: 'center',
+										color: 'gray',
+										marginBottom: 16
+									}}>
+										Для открытия нужно что-то сделать
+						</Text>
+
+						<div className='AchievementLogo' >
+							<Avatar size={196} mode="image" src={unavailableAchievement} />
+						</div>
+
+						<HorizontalScroll>
+							<div className='horizontalTopList'>
+								<HorizontalCell size='s' header={"Здесь"}
+								subtitle="никого">
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={"И тут"}
+								subtitle="тоже">
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={"Где же"}
+								subtitle="все?..">
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								</HorizontalCell>
+							</div>
+						</HorizontalScroll>
+
+						<div style={{ width: '99.5%' }}>
+							<Text weight="regular"
+										style={{
+											textAlign: 'center',
+											color: 'gray',
+											marginBottom: 16
+										}}>
+											Здесь должно быть что-то. Но что? <br /> Ответ	придётся поискать.
+							</Text>
+						</div>
+					</div>
+
+				</Gallery>
+			</Group>
 
 			<Group>
 				<Gallery
@@ -87,14 +155,14 @@ const Achievements = props => {
 						<HorizontalScroll showArrows getScrollToLeft={i => i - 120} getScrollToRight={i => i + 120}>
 							<div className='horizontalTopList'>
 								<HorizontalCell size='s' header={props.topList_Medium1["1"]?.first_name}
-								subtitle="30">
+								subtitle="36">
 									<Link href={"https://vk.com/id" + props.topList_Medium1["1"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["1"]?.photo_200}/>
 									</Link>
 			        	</HorizontalCell>
 
 								<HorizontalCell size='s' header={props.topList_Medium1["2"]?.first_name}
-								subtitle="21">
+								subtitle="30">
 									<Link href={"https://vk.com/id" + props.topList_Medium1["2"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium1["2"]?.photo_200}/>
 									</Link>
@@ -212,7 +280,7 @@ const Achievements = props => {
 			<Group>
 				<Gallery
 					slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
-					style={{ height: '600px' }}
+					style={{ height: '610px' }}
 					align="center"
 					slideIndex={slideIndex_Giga}
         	onChange={setSlideIndex_Giga}
@@ -375,6 +443,84 @@ const Achievements = props => {
 				</Gallery>
 		  </Group>
 
+
+			<Group>
+				<Gallery
+					slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
+					style={{ height: '580px' }}
+					align="center"
+					isDraggable
+					showArrows
+				>
+
+					<div style={{
+						display: 'flex',
+            flexDirection: 'column',
+						alignItems: 'center',
+						paddingTop: '20px',
+						textAlign: 'center',
+					}}>
+						<Title
+							level="1"
+							weight="semibold"
+							style={{ marginBottom: 4 }}
+						>
+							Исполинский ход
+						</Title>
+						<Text weight="regular"
+									style={{
+										textAlign: 'center',
+										color: 'gray',
+										marginBottom: 16
+									}}>
+									  Закажите миниатюры <br /> исполинского размера
+						</Text>
+
+						<div className='AchievementLogo' >
+							<Avatar size={196} mode="image" src={gargAchievement_1} />
+						</div>
+
+						<HorizontalScroll>
+							<div className='horizontalTopList'>
+								<HorizontalCell size='s' header={props.topList_Garg1["1"]?.first_name}
+								subtitle="1">
+									<Link href={"https://vk.com/id" + props.topList_Garg1["1"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Garg1["1"]?.photo_200}/>
+									</Link>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={"Никого"}
+								subtitle="нет">
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={"Только"}
+								subtitle="Анна">
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								</HorizontalCell>
+							</div>
+							<div>
+								<Progress style={{ margin: 'auto', width: '85%' }} value={progress_Garg/15*100} />
+								<Text weight="regular"
+											style={{
+												textAlign: 'center',
+												color: 'gray',
+												marginBottom: 16
+											}}>
+											  {progress_Garg}/15
+								</Text>
+							</div>
+						</HorizontalScroll>
+
+						<div>
+							<Button stretched size="l" onClick={props.go} data-to="top_garg1">
+			 					Смотреть весь топ
+			 				</Button>
+			     	</div>
+					</div>
+
+				</Gallery>
+		  </Group>
 
 			<Group>
 				<Gallery
