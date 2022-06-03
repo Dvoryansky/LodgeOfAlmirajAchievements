@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/LodgeOfAlmirajAchievements/static/css/main.ec8e1c8f.chunk.css",
-    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.eb4686c0.chunk.js",
-    "main.js.map": "/LodgeOfAlmirajAchievements/static/js/main.eb4686c0.chunk.js.map",
+    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.357e0f24.chunk.js",
+    "main.js.map": "/LodgeOfAlmirajAchievements/static/js/main.357e0f24.chunk.js.map",
     "runtime-main.js": "/LodgeOfAlmirajAchievements/static/js/runtime-main.3be06a48.js",
     "runtime-main.js.map": "/LodgeOfAlmirajAchievements/static/js/runtime-main.3be06a48.js.map",
     "static/css/2.1aee6b68.chunk.css": "/LodgeOfAlmirajAchievements/static/css/2.1aee6b68.chunk.css",
-    "static/js/2.da4af2ee.chunk.js": "/LodgeOfAlmirajAchievements/static/js/2.da4af2ee.chunk.js",
-    "static/js/2.da4af2ee.chunk.js.map": "/LodgeOfAlmirajAchievements/static/js/2.da4af2ee.chunk.js.map",
+    "static/js/2.d70aa99b.chunk.js": "/LodgeOfAlmirajAchievements/static/js/2.d70aa99b.chunk.js",
+    "static/js/2.d70aa99b.chunk.js.map": "/LodgeOfAlmirajAchievements/static/js/2.d70aa99b.chunk.js.map",
     "index.html": "/LodgeOfAlmirajAchievements/index.html",
     "static/css/2.1aee6b68.chunk.css.map": "/LodgeOfAlmirajAchievements/static/css/2.1aee6b68.chunk.css.map",
     "static/css/main.ec8e1c8f.chunk.css.map": "/LodgeOfAlmirajAchievements/static/css/main.ec8e1c8f.chunk.css.map",
-    "static/js/2.da4af2ee.chunk.js.LICENSE.txt": "/LodgeOfAlmirajAchievements/static/js/2.da4af2ee.chunk.js.LICENSE.txt",
+    "static/js/2.d70aa99b.chunk.js.LICENSE.txt": "/LodgeOfAlmirajAchievements/static/js/2.d70aa99b.chunk.js.LICENSE.txt",
     "static/media/dragon-icon.287e1517.svg": "/LodgeOfAlmirajAchievements/static/media/dragon-icon.287e1517.svg",
     "static/media/firstAchievement.fe103cd9.svg": "/LodgeOfAlmirajAchievements/static/media/firstAchievement.fe103cd9.svg",
     "static/media/gargAchievement_1.96d56ec7.svg": "/LodgeOfAlmirajAchievements/static/media/gargAchievement_1.96d56ec7.svg",
@@ -25,8 +25,8 @@
   "entrypoints": [
     "static/js/runtime-main.3be06a48.js",
     "static/css/2.1aee6b68.chunk.css",
-    "static/js/2.da4af2ee.chunk.js",
+    "static/js/2.d70aa99b.chunk.js",
     "static/css/main.ec8e1c8f.chunk.css",
-    "static/js/main.eb4686c0.chunk.js"
+    "static/js/main.357e0f24.chunk.js"
   ]
 }
