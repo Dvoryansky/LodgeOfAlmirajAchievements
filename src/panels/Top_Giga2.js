@@ -32,7 +32,6 @@ const Top_Giga2 = ({ id, go, topList_Giga2, currentUser }) => {
 		for (let user in topList_Giga2) {
 
 				switch(placeNumber) {
-					case 1:
 					case 2:
 					 	isFirst = true; break;
 					default: isFirst = false;

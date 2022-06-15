@@ -20,7 +20,7 @@ import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
 
 let topNumbers = [36, 30, 19, 18, 14, 11, 11, 10, 9, 8, 8,
-									8, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 4, 4,
+									8, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 4, 4,
 									2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1];
 
 import noUser from '../img/noUser.png';
@@ -41,11 +41,11 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 					case 5:
 					case 6:
 					case 12:
-					case 14:
-					case 22:
-					case 29:
-					case 34:
+					case 15:
+					case 23:
+					case 30:
 					case 35:
+					case 36:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
