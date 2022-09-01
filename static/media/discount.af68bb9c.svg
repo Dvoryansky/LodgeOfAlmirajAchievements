@@ -1,0 +1,28 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="332.6mm" height="332.4mm" viewBox="0 0 942.7 942.2">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Безымянный_градиент_158);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="Безымянный_градиент_158" data-name="Безымянный градиент 158" x1="471.35" y1="942.19" x2="471.35" gradientUnits="userSpaceOnUse">
+      <stop offset="0.06" stop-color="#45649a"/>
+      <stop offset="0.31" stop-color="#77699f"/>
+      <stop offset="0.54" stop-color="#a06da3"/>
+      <stop offset="0.73" stop-color="#b96fa6"/>
+      <stop offset="0.84" stop-color="#c270a7"/>
+    </linearGradient>
+  </defs>
+  <g id="Восстание_ГИГАНТЮР" data-name="Восстание ГИГАНТЮР">
+    <rect class="cls-1" width="942.7" height="942.19"/>
+  </g>
+  <g>
+    <path class="cls-2" d="M228,774.1,655.2,160.8h92.4l-428,613.3Z"/>
+    <polygon class="cls-2" points="292.3 152.4 140.9 239.9 140.9 414.7 292.3 502.1 443.7 414.7 443.7 239.9 292.3 152.4"/>
+    <polygon class="cls-2" points="679.3 440.1 527.9 527.5 527.9 702.3 679.3 789.8 830.7 702.3 830.7 527.5 679.3 440.1"/>
+  </g>
+</svg>
