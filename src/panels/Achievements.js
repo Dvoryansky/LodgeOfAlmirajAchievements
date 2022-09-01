@@ -22,16 +22,18 @@ import largeAchievement_1 from '../img/largeAchievement_1.svg';
 import gigaAchievement_1 from '../img/gigaAchievement_1.svg';
 import gigaAchievement_2 from '../img/gigaAchievement_2.svg';
 import gargAchievement_1 from '../img/gargAchievement_1.svg';
+import discountAchievement from '../img/discount.svg';
 
 import unavailableAchievement from '../img/unavailableAchievement.svg';
 import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 268;
+let progress_Medium = 276;
 let progress_Large = 26;
-let progress_Giga = 32;
+let progress_Giga = 33;
 let progress_Garg = 1;
+let progress_discount = 1;
 
 let keys = [];
 
@@ -53,7 +55,7 @@ const Achievements = props => {
 			<Group>
 				<Gallery
 					slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
-					style={{ height: '510px' }}
+					style={{ height: '580px' }}
 					align="center"
 					showArrows
 				>
@@ -70,7 +72,7 @@ const Achievements = props => {
 							weight="semibold"
 							style={{ marginBottom: 4 }}
 						>
-							Тайное <br /> достижение
+							Искатель сокровищ
 						</Title>
 						<Text weight="regular"
 									style={{
@@ -78,15 +80,22 @@ const Achievements = props => {
 										color: 'gray',
 										marginBottom: 16
 									}}>
-										Для открытия нужно что-то сделать
+										Отправляемся на поиски <br/> выгодных скидок!
 						</Text>
 
 						<div className='AchievementLogo' >
-							<Avatar size={196} mode="image" src={unavailableAchievement} />
+							<Avatar size={196} mode="image" src={discountAchievement} />
 						</div>
 
 						<HorizontalScroll>
 							<div className='horizontalTopList'>
+								<HorizontalCell size='s' header={props.topList_Discount["1"]?.first_name}
+								subtitle="1 | 10%">
+									<Link href={"https://vk.com/id" + props.topList_Discount["1"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Discount["1"]?.photo_200}/>
+									</Link>
+								</HorizontalCell>
+
 								<HorizontalCell size='s' header={"Здесь"}
 								subtitle="никого">
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
@@ -96,24 +105,24 @@ const Achievements = props => {
 								subtitle="тоже">
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
 								</HorizontalCell>
-
-								<HorizontalCell size='s' header={"Где же"}
-								subtitle="все?..">
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
-								</HorizontalCell>
 							</div>
-						</HorizontalScroll>
-
-						<div style={{ width: '99.5%' }}>
+							<Progress style={{ margin: 'auto', width: '85%' }} value={progress_discount} />
 							<Text weight="regular"
 										style={{
 											textAlign: 'center',
 											color: 'gray',
 											marginBottom: 16
 										}}>
-											Здесь должно быть что-то. Но что? <br /> Ответ	придётся поискать.
+										  {progress_discount}/100
 							</Text>
-						</div>
+						</HorizontalScroll>
+
+						<div>
+							<Button stretched size="l" onClick={props.go} data-to="top_discount">
+			 					Смотреть весь топ
+			 				</Button>
+			     	</div>
+
 					</div>
 
 				</Gallery>
@@ -402,9 +411,11 @@ const Achievements = props => {
 									</Link>
 								</HorizontalCell>
 
-								<HorizontalCell size='s' header={"Третий"}
-								subtitle="не лишний">
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								<HorizontalCell size='s' header={props.topList_Giga2["3"]?.first_name}
+								subtitle="1">
+									<Link href={"https://vk.com/id" + props.topList_Giga2["3"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Giga2["3"]?.photo_200}/>
+									</Link>
 								</HorizontalCell>
 							</div>
 

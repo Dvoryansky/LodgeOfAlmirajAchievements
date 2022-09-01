@@ -10,6 +10,7 @@ import Top_Large1 from './panels/Top_Large1';
 import Top_Giga1 from './panels/Top_Giga1';
 import Top_Giga2 from './panels/Top_Giga2';
 import Top_Garg1 from './panels/Top_Garg1';
+import Top_Discount from './panels/Top_Discount';
 
 const ROUTES = {
 	ACHIEVEMENTS: "achievements",
@@ -19,6 +20,7 @@ const ROUTES = {
 	TOP_GIGA1: "top_giga1",
 	TOP_GIGA2: "top_giga2",
 	TOP_GARG1: "top_garg1",
+	TOP_DISCOUNT: "top_discount",
 }
 
 const App = () => {
@@ -38,6 +40,7 @@ const App = () => {
 	const [topList_Giga1, setTopList_Giga1] = useState( { } );
 	const [topList_Giga2, setTopList_Giga2] = useState( { } );
 	const [topList_Garg1, setTopList_Garg1] = useState( { } );
+	const [topList_Discount, setTopList_Discount] = useState( { } );
 
 	const goBack = () => {
 	  if( history.length === 1 ) {  // Если в массиве одно значение:
@@ -121,6 +124,7 @@ const App = () => {
 				+ "603535757,"										// Twi Arwe 6
 				+ "142204381,"										// Даниил Чепурной 6
 				+ "145607848,"										// Сёма Айзенберг 6
+				+ "154474526,"										// Влада Пальчиковская 5
 				+ "45633716,"											// Василий Паньков 5
 				+ "626033970,"										// Анна Пентус 5
 				+ "434591535,"										// Ярослав Чуйко 5
@@ -129,12 +133,14 @@ const App = () => {
 				+ "13659175,"											// Ярослав Леухин 5
 				+ "474788601,"										// Ирина Назарова 4
 				+ "145190308,"										// Андрей Морозов 4
+				+ "11385009,"											// Вадим Старовойтов 2
 				+ "234245169,"										// Коля Итюменев 2
 				+ "96118,"												// Владимир Груздев 2
 				+ "317939768,"										// Христофор Врунгель 2
 				+ "290479067,"										// Александра Василевич 2
 				+ "48864238,"											// Полина Светлова 2
 				+ "1846504,"											// Антон Тимошин 2
+				+ "170833125,"										// Михаил Горожанкин 1
 				+ "25774183,"											// Святослав Дулькейт 1
 				+ "104461,"												// Маргарита Лаврова 1
 				+ "12610752,"											// Данила Шуляк 1
@@ -224,7 +230,8 @@ const App = () => {
 			await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "giga2MinisRequest", "params": {"user_ids":
 
 			// Восстание ГИГАНТЮР! 2
-			"361563395,"												// Тимур Мартынов 1
+			"198760416,"												// Константин Бородин 1
+			+ "361563395,"											// Тимур Мартынов 1
 			+ "194138998,"											// Роман Бегемаев 1 (1800)
 			+ ""
 			+ ""
@@ -250,6 +257,20 @@ const App = () => {
 
 				topList_Garg1_requestAnswer.response.forEach(element => {
 					topList_Garg1[String(k++)] = element;
+				});
+			});
+
+			await bridge.send("VKWebAppCallAPIMethod", {"method": "users.get", "request_id": "discountRequest", "params": {"user_ids":
+
+			// Искатель сокровищ
+			"198760416,"												// Константин Бородин 1 - 10%
+			+ "",
+			"fields": "photo_200, city", "v":"5.132", "access_token":"e2373f10caa6b5d0b37266606145851a358eecce4226f6265217d6d2299ab0b65e805f6b9fed3acaaf12e"
+		}}).then(topList_Discount_requestAnswer => {
+				let k = 1;
+
+				topList_Discount_requestAnswer.response.forEach(element => {
+					topList_Discount[String(k++)] = element;
 				});
 			});
 
@@ -280,6 +301,7 @@ const App = () => {
 																								 topList_Giga1={topList_Giga1}
 																								 topList_Giga2={topList_Giga2}
 																								 topList_Garg1={topList_Garg1}
+																								 topList_Discount={topList_Discount}
 																								 go={go} platform={platform}/>
 					<Top_First id={ROUTES.TOP_FIRST} topList_FirstFollowers={topList_FirstFollowers} currentUser={currentUser} go={go} />
 					<Top_Medium1 id={ROUTES.TOP_MEDIUM1} topList_Medium1={topList_Medium1} currentUser={currentUser} go={go} />
@@ -287,6 +309,7 @@ const App = () => {
 					<Top_Giga1 id={ROUTES.TOP_GIGA1} topList_Giga1={topList_Giga1} currentUser={currentUser} go={go} />
 					<Top_Giga2 id={ROUTES.TOP_GIGA2} topList_Giga2={topList_Giga2} currentUser={currentUser} go={go} />
 					<Top_Garg1 id={ROUTES.TOP_GARG1} topList_Garg1={topList_Garg1} currentUser={currentUser} go={go} />
+					<Top_Discount id={ROUTES.TOP_DISCOUNT} topList_Discount={topList_Discount} currentUser={currentUser} go={go} />
 				</View>
 			</AppRoot>
 		</AdaptivityProvider>
