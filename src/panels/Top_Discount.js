@@ -19,7 +19,7 @@ import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
 
-let topNumbers = ["1 | 10%", 1, 1];
+let topNumbers = ["1 | 12%", "1 | 10%", 1];
 
 import noUser from '../img/noUser.png';
 

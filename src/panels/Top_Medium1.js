@@ -18,10 +18,12 @@ import { Avatar,
 import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
+import SwordIcon from '../img/Icons/sword-icon.svg';
 
-let topNumbers = [36, 30, 19, 18, 14, 11, 11, 10, 9, 8, 8,
-									8, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 4, 4,
-									2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1];
+let topNumbers = [36, 30, 19, 18, 14, 11, 11, 10, 10, 10,
+									8, 8, 8, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 5, 5,
+									4, 4, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+									1, 1, 1, 1, 1, 1, 1, 1];
 
 import noUser from '../img/noUser.png';
 
@@ -31,6 +33,7 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 		let placeNumber = 1;
 		let isFirst = false;
 		let isGiga = false;
+		let isMedium = false;
 
 		for (let user in topList_Medium1) {
 
@@ -40,12 +43,12 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 					case 4:
 					case 5:
 					case 6:
-					case 12:
-					case 15:
-					case 24:
-					case 32:
+					case 13:
+					case 16:
+					case 25:
 					case 38:
-					case 39:
+					case 45:
+					case 46:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
@@ -55,6 +58,16 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 					case 4:
 					 	isGiga = true; break;
 					default: isGiga = false;
+				}
+
+				switch(placeNumber) {
+					case 1:
+					case 2:
+					case 3:
+					case 4:
+					case 5:
+					 	isMedium = true; break;
+					default: isMedium = false;
 				}
 
 				medium1_usersList.push(
@@ -77,6 +90,12 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 					      verticalAlign: 'bottom',
 					      position: 'relative',
 					      top: -1
+					    }}/> : ""} 
+							{isMedium ? <Avatar size={18} mode="image" src={SwordIcon} style={{
+					      display: 'inline-block',
+					      verticalAlign: 'bottom',
+					      position: 'relative',
+					      top: -1
 					    }}/> : ""}
 
 						</SimpleCell>
@@ -89,8 +108,20 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 			<PanelHeader left={<PanelHeaderBack onClick={() => window.history.back()} />} >Средний топ</PanelHeader>
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
-					<Text weight="regular">Миниатюры ищут своих хозяев! Без вас им не выжить в этом жестоком мире.
-																	Заказывайте миниатюры среднего или меньшего размера и станьте героями для них! А они станут героями для вас.</Text>
+					<Text weight="regular" style={{
+						backgroundColor: "#FFE8CC",
+						borderLeft: "6px solid #FF933B",
+						padding: "0.1em 2em 0.1em 1em"
+					}}>
+						<p style={{fontStyle: "italic", textAlign: "justify"}}>«На прошлой неделе губернатора в тюрьму упекли. Говорят, какая-то группа искателей приключений накопали на него компромат. Что ж, поделом ему! Злодеи везде губят простой народ, а на каждого злодея найдутся и свои народные герои»</p>
+						<p style={{textAlign: "right"}}>— Человек Геон, фермер близ города, <br />где скандально задержали местного губернатора</p>
+					</Text>
+				</Div>
+				<Div>
+					<Text weight="regular">
+						Благодаря последователям из списка ниже Ложа отправила первые 300 миниатюр среднего размера в дома игроков по всему миру!
+						Топ-5 последователей получили награды за наиболее значимый вклад в получение этого достижения.
+					</Text>
 				</Div>
 			</Group>
 

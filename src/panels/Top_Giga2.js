@@ -18,8 +18,9 @@ import { Avatar,
 import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
+import SwordIcon from '../img/Icons/sword-icon.svg';
 
-let topNumbers = [1, 1, 1];
+let topNumbers = [1, 1, 1, 1, 1, 1, 1];
 
 import noUser from '../img/noUser.png';
 
@@ -28,13 +29,21 @@ const Top_Giga2 = ({ id, go, topList_Giga2, currentUser }) => {
 		let giga2_usersList = [];
 		let placeNumber = 1;
 		let isFirst = false;
+		let isMedium = false;
 
 		for (let user in topList_Giga2) {
 
 				switch(placeNumber) {
-					case 3:
+					case 1:
+					case 7:
 					 	isFirst = true; break;
 					default: isFirst = false;
+				}
+
+				switch(placeNumber) {
+					case 7:
+					 	isMedium = true; break;
+					default: isMedium = false;
 				}
 
 				giga2_usersList.push(
@@ -51,7 +60,14 @@ const Top_Giga2 = ({ id, go, topList_Giga2, currentUser }) => {
 					      verticalAlign: 'bottom',
 					      position: 'relative',
 					      top: -1
+					    }}/> : ""} 
+							{isMedium ? <Avatar size={18} mode="image" src={SwordIcon} style={{
+					      display: 'inline-block',
+					      verticalAlign: 'bottom',
+					      position: 'relative',
+					      top: -1
 					    }}/> : ""}
+
 						</SimpleCell>
 					</Link>
 				);
@@ -63,7 +79,6 @@ const Top_Giga2 = ({ id, go, topList_Giga2, currentUser }) => {
 			<Group header={<Header mode="secondary">Описание</Header>}>
 				<Div>
 					<Text weight="regular">Заказывай миниатюры огромного размера и попадай в топ!</Text>
-					<br/><Text weight="regular">А для самых любознательных тут припрятан редкий пароль на скидку в 20%!!! Вводи "ГигантюрноеПодношение" в поле для промокода при оформлении заказа! И поспеши, потому что пароль сработает только раз!</Text>
 				</Div>
 			</Group>
 

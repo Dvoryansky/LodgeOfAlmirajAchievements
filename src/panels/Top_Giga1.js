@@ -18,6 +18,7 @@ import { Avatar,
 import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
+import SwordIcon from '../img/Icons/sword-icon.svg';
 
 let topNumbers = [4, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1,
 									1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -31,6 +32,7 @@ const Top_Giga1 = ({ id, go, topList_Giga1, currentUser }) => {
 		let placeNumber = 1;
 		let isFirst = false;
 		let isGiga = false;
+		let isMedium = false;
 
 		for (let user in topList_Giga1) {
 
@@ -54,6 +56,13 @@ const Top_Giga1 = ({ id, go, topList_Giga1, currentUser }) => {
 					default: isGiga = false;
 				}
 
+				switch(placeNumber) {
+					case 1:
+					case 2:
+					 	isMedium = true; break;
+					default: isMedium = false;
+				}
+
 				giga1_usersList.push(
 					<Link href={"https://vk.com/id" + topList_Giga1[user].id} target='_blank'>
 						<SimpleCell
@@ -70,6 +79,12 @@ const Top_Giga1 = ({ id, go, topList_Giga1, currentUser }) => {
 					      top: -1
 					    }}/> : ""}
 							{isGiga ? <Avatar size={18} mode="image" src={DragonIcon} style={{
+					      display: 'inline-block',
+					      verticalAlign: 'bottom',
+					      position: 'relative',
+					      top: -1
+					    }}/> : ""} 
+							{isMedium ? <Avatar size={18} mode="image" src={SwordIcon} style={{
 					      display: 'inline-block',
 					      verticalAlign: 'bottom',
 					      position: 'relative',

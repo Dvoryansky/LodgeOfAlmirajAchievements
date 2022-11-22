@@ -18,6 +18,7 @@ import { Avatar,
 import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
+import SwordIcon from '../img/Icons/sword-icon.svg';
 
 let topNumbers = [1, 1];
 
@@ -28,6 +29,7 @@ const Top_Garg1 = ({ id, go, topList_Garg1, currentUser }) => {
 		let garg1_usersList = [];
 		let placeNumber = 1;
 		let isFirst = false;
+		let isMedium = false;
 
 		for (let user in topList_Garg1) {
 

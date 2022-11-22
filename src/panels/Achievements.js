@@ -18,6 +18,7 @@ import { Icon12Question } from '@vkontakte/icons';
 
 import firstAchievement from '../img/firstAchievement.svg';
 import mediumAchievement_1 from '../img/mediumAchievement_1.svg';
+import mediumAchievement_2 from '../img/mediumAchievement_2.svg';
 import largeAchievement_1 from '../img/largeAchievement_1.svg';
 import gigaAchievement_1 from '../img/gigaAchievement_1.svg';
 import gigaAchievement_2 from '../img/gigaAchievement_2.svg';
@@ -29,17 +30,18 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 276;
-let progress_Large = 26;
-let progress_Giga = 33;
+let progress_Medium = 332;
+let progress_Large = 32;
+let progress_Giga = 37;
 let progress_Garg = 1;
-let progress_discount = 1;
+let progress_discount = 2;
 
 let keys = [];
 
 const Achievements = props => {
 
 	const [slideIndex_Giga, setSlideIndex_Giga] = useState(1);
+	const [slideIndex_Medium, setSlideIndex_Medium] = useState(1);
 
 	if (!keys[0]) {
 		keys = Object.keys(props.topList_FirstFollowers);
@@ -90,9 +92,16 @@ const Achievements = props => {
 						<HorizontalScroll>
 							<div className='horizontalTopList'>
 								<HorizontalCell size='s' header={props.topList_Discount["1"]?.first_name}
-								subtitle="1 | 10%">
+								subtitle="1 | 12%">
 									<Link href={"https://vk.com/id" + props.topList_Discount["1"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Discount["1"]?.photo_200}/>
+									</Link>
+								</HorizontalCell>
+
+								<HorizontalCell size='s' header={props.topList_Discount["2"]?.first_name}
+								subtitle="1 | 10%">
+									<Link href={"https://vk.com/id" + props.topList_Discount["2"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Discount["2"]?.photo_200}/>
 									</Link>
 								</HorizontalCell>
 
@@ -101,10 +110,6 @@ const Achievements = props => {
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
 								</HorizontalCell>
 
-								<HorizontalCell size='s' header={"И тут"}
-								subtitle="тоже">
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
-								</HorizontalCell>
 							</div>
 							<Progress style={{ margin: 'auto', width: '85%' }} value={progress_discount} />
 							<Text weight="regular"
@@ -130,11 +135,14 @@ const Achievements = props => {
 
 			<Group>
 				<Gallery
-		      slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
-		      style={{ height: '580px' }}
+					slideWidth={document.documentElement.clientWidth > 580 ? '50%' : '70%'}
+					style={{ height: '610px' }}
 					align="center"
+					slideIndex={slideIndex_Medium}
+        	onChange={setSlideIndex_Medium}
 					showArrows
-		    >
+					isDraggable
+				>
 					<div style={{
 						display: 'flex',
             flexDirection: 'column',
@@ -155,13 +163,14 @@ const Achievements = props => {
 										color: 'gray',
 										marginBottom: 16
 									}}>
-									  Закажите миниатюры <br /> среднего или меньшего размера
+									  Игроки могут<br /> спать спокойно.
 						</Text>
 
 						<div className='AchievementLogo' >
 							<Avatar size={196} mode="image" src={mediumAchievement_1}  />
 						</div>
-						<HorizontalScroll showArrows getScrollToLeft={i => i - 120} getScrollToRight={i => i + 120}>
+
+						<HorizontalScroll>
 							<div className='horizontalTopList'>
 								<HorizontalCell size='s' header={props.topList_Medium1["1"]?.first_name}
 								subtitle="36">
@@ -184,22 +193,110 @@ const Achievements = props => {
 									</Link>
 			        	</HorizontalCell>
 							</div>
-							<Progress style={{ margin: 'auto', width: '85%' }} value={(progress_Medium/300)*100} />
+						</HorizontalScroll>
+
+						<div style={{ width: '99.5%' }}>
+
 							<Text weight="regular"
 										style={{
 											textAlign: 'center',
 											color: 'gray',
 											marginBottom: 16
 										}}>
-										  {progress_Medium}/300
+											Статистика говорит о 300 героях и злодеях. <br />Но сколько их среди тех, кого она не учла?
 							</Text>
-						</HorizontalScroll>
+						</div>
 
 						<div>
 							<Button stretched size="l" onClick={props.go} data-to="top_medium1">
 			 					Смотреть весь топ
 			 				</Button>
 			     	</div>
+					</div>
+
+					<div style={{
+						display: 'flex',
+            flexDirection: 'column',
+						alignItems: 'center',
+						paddingTop: '20px',
+						textAlign: 'center',
+					}}>
+						<Title
+							level="1"
+							weight="semibold"
+							style={{ marginBottom: 4 }}
+						>
+							Миниатюры <br /> в каждый карман!
+						</Title>
+						<Text weight="regular"
+									style={{
+										textAlign: 'center',
+										color: 'gray',
+										marginBottom: 16
+									}}>
+									  Закажите миниатюры <br /> среднего или меньшего размера
+						</Text>
+
+						<div className='AchievementLogo' >
+							<Avatar size={196} mode="image" src={mediumAchievement_2}  />
+						</div>
+
+						<HorizontalScroll>
+							<div className='horizontalTopList'>
+								<HorizontalCell size='s' header={props.topList_Medium2["1"]?.first_name}
+								subtitle="20">
+									<Link href={"https://vk.com/id" + props.topList_Medium2["1"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium2["1"]?.photo_200}/>
+									</Link>
+			        	</HorizontalCell>
+
+								<HorizontalCell size='s' header={props.topList_Medium2["2"]?.first_name}
+								subtitle="4">
+									<Link href={"https://vk.com/id" + props.topList_Medium2["2"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium2["2"]?.photo_200}/>
+									</Link>
+			        	</HorizontalCell>
+
+								<HorizontalCell size='s' header={props.topList_Medium2["3"]?.first_name}
+								subtitle="3">
+									<Link href={"https://vk.com/id" + props.topList_Medium2["3"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium2["3"]?.photo_200}/>
+									</Link>
+			        	</HorizontalCell>
+							</div>
+
+							<div style={{}}>
+								<div style={{ width: '30%', display: 'inline-block'}}>
+									<progress class="progressA" value="300" max="300"/>
+								</div>
+									<div style={{width: '60%', display: 'inline-block'}}>
+									<progress class="progressB" value={progress_Medium-300} max="700" />
+								</div>
+								<Text weight="regular"
+											style={{
+												textAlign: 'center',
+												color: 'gray',
+												marginBottom: 16,
+											}}>
+												{progress_Medium}/1000
+								</Text>
+							</div>
+						</HorizontalScroll>
+
+						<div>
+							<Button stretched size="l" onClick={props.go} data-to="top_medium2">
+			 					Смотреть весь топ
+			 				</Button>
+			     	</div>
+					</div>
+
+					<div style={{
+						display: 'flex',
+            flexDirection: 'column',
+						alignItems: 'center',
+						paddingTop: '20px',
+						textAlign: 'center',
+					}}>
 					</div>
 
 				</Gallery>
