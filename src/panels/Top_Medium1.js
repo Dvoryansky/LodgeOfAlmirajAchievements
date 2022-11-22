@@ -111,7 +111,8 @@ const Top_Medium1 = ({ id, go, topList_Medium1, currentUser }) => {
 					<Text weight="regular" style={{
 						backgroundColor: "#FFE8CC",
 						borderLeft: "6px solid #FF933B",
-						padding: "0.1em 2em 0.1em 1em"
+						padding: "0.1em 2em 0.1em 1em",
+						color: "black",
 					}}>
 						<p style={{fontStyle: "italic", textAlign: "justify"}}>«На прошлой неделе губернатора в тюрьму упекли. Говорят, какая-то группа искателей приключений накопали на него компромат. Что ж, поделом ему! Злодеи везде губят простой народ, а на каждого злодея найдутся и свои народные герои»</p>
 						<p style={{textAlign: "right"}}>— Человек Геон, фермер близ города, <br />где скандально задержали местного губернатора</p>

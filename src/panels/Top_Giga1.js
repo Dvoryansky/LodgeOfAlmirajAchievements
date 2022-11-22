@@ -104,7 +104,8 @@ const Top_Giga1 = ({ id, go, topList_Giga1, currentUser }) => {
 					<Text weight="regular" style={{
 						backgroundColor: "#FFE8CC",
 						borderLeft: "6px solid #FF933B",
-						padding: "0.1em 2em 0.1em 1em"
+						padding: "0.1em 2em 0.1em 1em",
+						color: "black",
 					}}>
 						<p style={{fontStyle: "italic", textAlign: "justify"}}>«Эти огромные чудища появились в нашем мире ещё до того, как родились герои, способные их победить. Сколько жизней было унесено этими монстрами, сколько караванов уничтожено! А всё ради чего? Ради грёбаного хлеба!»</p>
 						<p style={{textAlign: "right"}}>— Дварф Баргейм, владелец таверны «Три гуся», о гусях-гидрах</p>
