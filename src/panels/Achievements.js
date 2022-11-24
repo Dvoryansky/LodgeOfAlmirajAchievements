@@ -30,7 +30,7 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 332;
+let progress_Medium = 334;
 let progress_Large = 32;
 let progress_Giga = 37;
 let progress_Garg = 1;
