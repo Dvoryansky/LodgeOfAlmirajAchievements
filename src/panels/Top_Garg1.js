@@ -34,7 +34,7 @@ const Top_Garg1 = ({ id, go, topList_Garg1, currentUser }) => {
 		for (let user in topList_Garg1) {
 
 				switch(placeNumber) {
-					case 0:
+					case 1:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}

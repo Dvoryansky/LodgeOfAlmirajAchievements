@@ -20,7 +20,7 @@ import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
 import SwordIcon from '../img/Icons/sword-icon.svg';
 
-let topNumbers = [20, 4, 3, 2, 2, 2, 1];
+let topNumbers = [20, 5, 4, 4, 3, 2, 2, 2, 2];
 
 import noUser from '../img/noUser.png';
 
