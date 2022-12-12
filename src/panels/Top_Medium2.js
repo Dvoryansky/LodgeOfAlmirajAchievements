@@ -20,7 +20,7 @@ import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
 import SwordIcon from '../img/Icons/sword-icon.svg';
 
-let topNumbers = [20, 5, 4, 4, 3, 2, 2, 2, 2];
+let topNumbers = [27, 26, 20, 5, 4, 4, 3, 2, 2, 2, 2];
 
 import noUser from '../img/noUser.png';
 
@@ -35,7 +35,7 @@ const Top_Medium2 = ({ id, go, topList_Medium2, currentUser }) => {
 		for (let user in topList_Medium2) {
 
 				switch(placeNumber) {
-					case 1:
+					case 3:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
