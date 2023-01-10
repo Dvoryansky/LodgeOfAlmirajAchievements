@@ -19,7 +19,7 @@ import { Icon201CircleFillGold } from '@vkontakte/icons';
 import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
 
-let topNumbers = ["1 | 12%", "1 | 10%", 1];
+let topNumbers = ["1 | 12%", "1 | 10%", "1 | 7%"];
 
 import noUser from '../img/noUser.png';
 
@@ -32,7 +32,7 @@ const Top_Discount = ({ id, go, topList_Discount, currentUser }) => {
 		for (let user in topList_Discount) {
 
 				switch(placeNumber) {
-					case 3:
+					case 0:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}

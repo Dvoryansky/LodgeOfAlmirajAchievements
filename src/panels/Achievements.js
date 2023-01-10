@@ -30,11 +30,11 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 397;
-let progress_Large = 42;
-let progress_Giga = 38;
+let progress_Medium = 456;
+let progress_Large = 49;
+let progress_Giga = 41;
 let progress_Garg = 2;
-let progress_discount = 2;
+let progress_discount = 3;
 
 let keys = [];
 
@@ -105,9 +105,11 @@ const Achievements = props => {
 									</Link>
 								</HorizontalCell>
 
-								<HorizontalCell size='s' header={"Здесь"}
-								subtitle="никого">
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								<HorizontalCell size='s' header={props.topList_Discount["3"]?.first_name}
+								subtitle="1 | 7%">
+									<Link href={"https://vk.com/id" + props.topList_Discount["3"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Discount["3"]?.photo_200}/>
+									</Link>
 								</HorizontalCell>
 
 							</div>
