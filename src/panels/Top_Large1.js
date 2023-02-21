@@ -22,7 +22,7 @@ import SwordIcon from '../img/Icons/sword-icon.svg';
 
 let topNumbers = [10, 5, 5, 4, 3, 3, 3, 2, 2, 2, 1,
 									1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-									1, 1, 1, 1, 1, 1, 1];
+									1, 1, 1, 1, 1, 1, 1, 1];
 
 import noUser from '../img/noUser.png';
 
@@ -40,18 +40,18 @@ const Top_Large1 = ({ id, go, topList_Large1, currentUser }) => {
 					case 4:
 					case 5:
 					case 9:
-					case 18:
-					case 20:
-					case 26:
+					case 19:
+					case 21:
 					case 27:
 					case 28:
+					case 29:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
 
 				switch(placeNumber) {
 					case 4:
-					case 21:
+					case 22:
 					 	isGiga = true; break;
 					default: isGiga = false;
 				}
@@ -59,8 +59,8 @@ const Top_Large1 = ({ id, go, topList_Large1, currentUser }) => {
 				switch(placeNumber) {
 					case 4:
 					case 9:
-					case 21:
-					case 27:
+					case 22:
+					case 28:
 					 	isMedium = true; break;
 					default: isMedium = false;
 				}

@@ -30,9 +30,9 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 556;
-let progress_Large = 57;
-let progress_Giga = 42;
+let progress_Medium = 589;
+let progress_Large = 58;
+let progress_Giga = 43;
 let progress_Garg = 2;
 let progress_discount = 4;
 
@@ -246,14 +246,14 @@ const Achievements = props => {
 						<HorizontalScroll>
 							<div className='horizontalTopList'>
 								<HorizontalCell size='s' header={props.topList_Medium2["1"]?.first_name}
-								subtitle="33">
+								subtitle="44">
 									<Link href={"https://vk.com/id" + props.topList_Medium2["1"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium2["1"]?.photo_200}/>
 									</Link>
 			        	</HorizontalCell>
 
 								<HorizontalCell size='s' header={props.topList_Medium2["2"]?.first_name}
-								subtitle="31">
+								subtitle="33">
 									<Link href={"https://vk.com/id" + props.topList_Medium2["2"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium2["2"]?.photo_200}/>
 									</Link>
