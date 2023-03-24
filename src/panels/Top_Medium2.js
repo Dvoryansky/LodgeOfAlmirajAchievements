@@ -39,7 +39,7 @@ const Top_Medium2 = ({ id, go, topList_Medium2, currentUser }) => {
 
 				switch(placeNumber) {
 					case 5:
-					case 16:
+					case 17:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
