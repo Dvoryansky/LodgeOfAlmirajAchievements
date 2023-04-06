@@ -30,7 +30,8 @@ import noUser from '../img/noUser.png';
 
 import './styles.css';
 
-let progress_Medium = 623;
+// 06.04
+let progress_Medium = 625;
 let progress_Large = 60;
 let progress_Giga = 44;
 let progress_Garg = 2;
