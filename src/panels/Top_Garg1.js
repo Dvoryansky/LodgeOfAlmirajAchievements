@@ -35,6 +35,7 @@ const Top_Garg1 = ({ id, go, topList_Garg1, currentUser }) => {
 
 				switch(placeNumber) {
 					case 1:
+					case 2:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}

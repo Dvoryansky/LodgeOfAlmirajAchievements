@@ -20,9 +20,10 @@ import { Icon12StarCircleFillYellow } from '@vkontakte/icons';
 import DragonIcon from '../img/Icons/dragon-icon.svg';
 import SwordIcon from '../img/Icons/sword-icon.svg';
 
-let topNumbers = [10, 5, 5, 4, 3, 3, 3, 2, 2, 2, 2, 2, 1,
-									1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-									1, 1, 1, 1, 1, 1, 1, 1];
+let topNumbers = [10, 6, 5, 5, 4, 4, 3, 3, 3,
+									2, 2, 2, 2, 2, 2, 2, 1, 1, 1,
+									1, 1, 1, 1, 1, 1, 1, 1,
+									1, 1, 1, 1, 1, 1, 1];
 
 import noUser from '../img/noUser.png';
 
@@ -37,30 +38,31 @@ const Top_Large1 = ({ id, go, topList_Large1, currentUser }) => {
 		for (let user in topList_Large1) {
 
 				switch(placeNumber) {
-					case 4:
-					case 5:
-					case 11:
-					case 21:
-					case 23:
-					case 29:
-					case 30:
-					case 31:
+					case 6:
+					case 7:
+					case 10:
+					case 15:
+					case 25:
+					case 27:
+					case 33:
+					case 34:
+					case 35:
 					 	isFirst = true; break;
 					default: isFirst = false;
 				}
 
 				switch(placeNumber) {
-					case 4:
-					case 24:
+					case 6:
+					case 28:
 					 	isGiga = true; break;
 					default: isGiga = false;
 				}
 
 				switch(placeNumber) {
-					case 4:
-					case 11:
-					case 24:
-					case 30:
+					case 6:
+					case 15:
+					case 28:
+					case 33:
 					 	isMedium = true; break;
 					default: isMedium = false;
 				}

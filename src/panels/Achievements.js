@@ -31,10 +31,10 @@ import noUser from '../img/noUser.png';
 import './styles.css';
 
 // 06.04
-let progress_Medium = 650;
-let progress_Large = 62;
-let progress_Giga = 44;
-let progress_Garg = 2;
+let progress_Medium = 763;
+let progress_Large = 75;
+let progress_Giga = 50;
+let progress_Garg = 3;
 let progress_discount = 4;
 
 let keys = [];
@@ -247,7 +247,7 @@ const Achievements = props => {
 						<HorizontalScroll>
 							<div className='horizontalTopList'>
 								<HorizontalCell size='s' header={props.topList_Medium2["1"]?.first_name}
-								subtitle="77">
+								subtitle="93">
 									<Link href={"https://vk.com/id" + props.topList_Medium2["1"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Medium2["1"]?.photo_200}/>
 									</Link>
@@ -350,7 +350,7 @@ const Achievements = props => {
 								</HorizontalCell>
 
 								<HorizontalCell size='s' header={props.topList_Large1["2"]?.first_name}
-								subtitle="5">
+								subtitle="6">
 									<Link href={"https://vk.com/id" + props.topList_Large1["2"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Large1["2"]?.photo_200}/>
 									</Link>
@@ -498,7 +498,7 @@ const Achievements = props => {
 						<HorizontalScroll>
 							<div className='horizontalTopList'>
 								<HorizontalCell size='s' header={props.topList_Giga2["1"]?.first_name}
-								subtitle="1">
+								subtitle="2">
 									<Link href={"https://vk.com/id" + props.topList_Giga2["1"]?.id} target='_blank'>
 										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Giga2["1"]?.photo_200}/>
 									</Link>
@@ -609,9 +609,11 @@ const Achievements = props => {
 									</Link>
 								</HorizontalCell>
 
-								<HorizontalCell size='s' header={"Никого"}
-								subtitle="нет">
-										<Avatar size={props.platform === 'ios' ? 64 : 56} src={noUser}/>
+								<HorizontalCell size='s' header={props.topList_Garg1["3"]?.first_name}
+								subtitle="1">
+									<Link href={"https://vk.com/id" + props.topList_Garg1["3"]?.id} target='_blank'>
+										<Avatar size={props.platform === 'ios' ? 64 : 56} src={props.topList_Garg1["3"]?.photo_200}/>
+									</Link>
 								</HorizontalCell>
 							</div>
 							<div>
