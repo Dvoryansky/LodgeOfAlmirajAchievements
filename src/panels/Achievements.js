@@ -31,7 +31,7 @@ import noUser from '../img/noUser.png';
 import './styles.css';
 
 // 06.04
-let progress_Medium = 763;
+let progress_Medium = 765;
 let progress_Large = 75;
 let progress_Giga = 50;
 let progress_Garg = 3;
