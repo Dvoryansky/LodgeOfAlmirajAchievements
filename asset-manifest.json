@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/LodgeOfAlmirajAchievements/static/css/main.231743b6.css",
-    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.0197f116.js",
+    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.eb8d7b81.js",
     "static/media/gargAchievement_1.svg": "/LodgeOfAlmirajAchievements/static/media/gargAchievement_1.6530b39fde5846280f55904a60bd5634.svg",
     "static/media/firstAchievement.svg": "/LodgeOfAlmirajAchievements/static/media/firstAchievement.8cf6cebe9e49cd01c8bd7c8578b48f4d.svg",
     "static/media/gigaAchievement_2.svg": "/LodgeOfAlmirajAchievements/static/media/gigaAchievement_2.5bff44b75e9d5f351bc3feb641990aee.svg",
@@ -16,10 +16,10 @@
     "static/media/sword-icon.svg": "/LodgeOfAlmirajAchievements/static/media/sword-icon.49be02481abaee8736d7c6ed2fcd1202.svg",
     "index.html": "/LodgeOfAlmirajAchievements/index.html",
     "main.231743b6.css.map": "/LodgeOfAlmirajAchievements/static/css/main.231743b6.css.map",
-    "main.0197f116.js.map": "/LodgeOfAlmirajAchievements/static/js/main.0197f116.js.map"
+    "main.eb8d7b81.js.map": "/LodgeOfAlmirajAchievements/static/js/main.eb8d7b81.js.map"
   },
   "entrypoints": [
     "static/css/main.231743b6.css",
-    "static/js/main.0197f116.js"
+    "static/js/main.eb8d7b81.js"
   ]
 }
