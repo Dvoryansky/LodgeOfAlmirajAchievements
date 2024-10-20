@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/LodgeOfAlmirajAchievements/static/css/main.231743b6.css",
-    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.267dc0b2.js",
+    "main.js": "/LodgeOfAlmirajAchievements/static/js/main.fd26bde4.js",
     "static/media/gargAchievement_1.svg": "/LodgeOfAlmirajAchievements/static/media/gargAchievement_1.6530b39fde5846280f55904a60bd5634.svg",
     "static/media/firstAchievement.svg": "/LodgeOfAlmirajAchievements/static/media/firstAchievement.8cf6cebe9e49cd01c8bd7c8578b48f4d.svg",
     "static/media/gigaAchievement_2.svg": "/LodgeOfAlmirajAchievements/static/media/gigaAchievement_2.5bff44b75e9d5f351bc3feb641990aee.svg",
@@ -13,14 +13,15 @@
     "static/media/discount.svg": "/LodgeOfAlmirajAchievements/static/media/discount.52a6c40da2309d5616549f6d9609a9a4.svg",
     "static/media/noUser.png": "/LodgeOfAlmirajAchievements/static/media/noUser.49788283fdcd2f96ab93.png",
     "static/media/dragon-icon.svg": "/LodgeOfAlmirajAchievements/static/media/dragon-icon.287e1517ba5bf7726b78b26fd0e082a2.svg",
+    "static/media/jaws-icon.svg": "/LodgeOfAlmirajAchievements/static/media/jaws-icon.2adef1ff1c7ebc95c9837afdab3ecf97.svg",
     "static/media/battleAxe-icon.svg": "/LodgeOfAlmirajAchievements/static/media/battleAxe-icon.03f9ada810c350277519a0372816ce1b.svg",
     "static/media/sword-icon.svg": "/LodgeOfAlmirajAchievements/static/media/sword-icon.49be02481abaee8736d7c6ed2fcd1202.svg",
     "index.html": "/LodgeOfAlmirajAchievements/index.html",
     "main.231743b6.css.map": "/LodgeOfAlmirajAchievements/static/css/main.231743b6.css.map",
-    "main.267dc0b2.js.map": "/LodgeOfAlmirajAchievements/static/js/main.267dc0b2.js.map"
+    "main.fd26bde4.js.map": "/LodgeOfAlmirajAchievements/static/js/main.fd26bde4.js.map"
   },
   "entrypoints": [
     "static/css/main.231743b6.css",
-    "static/js/main.267dc0b2.js"
+    "static/js/main.fd26bde4.js"
   ]
 }
